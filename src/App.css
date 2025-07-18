@@ -18,6 +18,22 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.page {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.page::before {
+  content: "";
+  background-image: url("/src/assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  position: absolute;
+  z-index: -1;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

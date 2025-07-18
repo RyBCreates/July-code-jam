@@ -2,7 +2,7 @@ import "./form.css";
 
 function Form() {
   return (
-    <section className="form">
+    <section id="form-section" className="form">
       <h2>Choose Your Sports</h2>
       <form>
         <fieldset>
