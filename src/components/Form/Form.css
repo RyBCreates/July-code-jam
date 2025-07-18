@@ -24,13 +24,3 @@ select {
   padding: 10px;
   margin-bottom: 10px;
 }
-.checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
