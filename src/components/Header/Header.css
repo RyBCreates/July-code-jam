@@ -1,0 +1,21 @@
+.hero {
+  background: url("") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero__content h1 {
+  font-size: 3rem;
+}
+.hero__content p {
+  font-size: 1.2rem;
+}
+.btn-primary {
+  padding: 12px 24px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
