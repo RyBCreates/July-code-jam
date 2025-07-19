@@ -1,4 +1,4 @@
-import "./route-preview.css";
+import "./RoutePreview.css";
 
 function RoutePreview() {
   return (

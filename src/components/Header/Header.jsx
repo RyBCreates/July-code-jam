@@ -3,7 +3,7 @@ import logo from "../../assets/logo/logo.png";
 import avatar from "../../assets/images/default-avatar.svg";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ handleLoginClick, handleRegisterClick }) {
   return (
     <header className="header">
       <Link className="header__logo-container" to="/">
@@ -11,7 +11,22 @@ function Header() {
         <h1 className="header__title">ColoRUSH</h1>
       </Link>
       <div className="header__user-block">
-        <button className="header__login-button">Login</button>
+        <button
+          className="header__register-button"
+          onClick={() => {
+            handleRegisterClick();
+          }}
+        >
+          Register
+        </button>
+        <button
+          className="header__login-button"
+          onClick={() => {
+            handleLoginClick();
+          }}
+        >
+          Login
+        </button>
         <img className="header__avatar" src={avatar} alt="Avatar" />
       </div>
     </header>

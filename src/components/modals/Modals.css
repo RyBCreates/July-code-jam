@@ -1,0 +1,92 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.modal__opened {
+  visibility: visible;
+}
+
+.modal__content {
+  border: 1px solid #0000004d;
+  background-color: #ffffff;
+  position: relative;
+  padding: 28px 28px 36px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  max-width: 496px;
+  width: 100%;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.modal__close-button {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__form {
+  width: 100%;
+}
+
+.modal__input_type_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  padding: 4px;
+}
+
+.modal__submit-button {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  background: #000000;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.modal__auth-buttons {
+  display: flex;
+}
+
+.modal__submit-button:hover {
+  background-color: #00000099;
+}
+
+.modal__button_alternate {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 113px;
+  bottom: 40px;
+}
+
+.modal__button_alternate:hover {
+  color: #00000099;
+}

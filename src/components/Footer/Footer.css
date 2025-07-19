@@ -3,6 +3,8 @@
   color: white;
   text-align: center;
   padding: 30px 20px;
+  position: relative;
+  z-index: 10;
 }
 .footer__content a {
   color: #ccc;
