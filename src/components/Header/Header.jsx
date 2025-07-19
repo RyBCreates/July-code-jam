@@ -1,21 +1,18 @@
-import "./header.css";
-import logo from "../../assets/images/logo.png";
+import "./Header.css";
+import logo from "../../assets/logo/logo.png";
+import avatar from "../../assets/images/default-avatar.svg";
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="hero">
-      <div className="hero__content">
-        <div className="hero__logo">
-          <img src={logo} alt="ColoRUSH Logo" className="hero__logo-img" />
-        </div>
-        <div className="hero__tagline">
-          <h1>Plan Your Ultimate Colorado Adventure</h1>
-          <p>Pick your sports. We’ll map your adrenaline-filled route.</p>
-          <Link to="/create-your-adventure">
-            <button className="btn-primary">Start Planning</button>
-          </Link>
-        </div>
+    <header className="header">
+      <Link className="header__logo-container" to="/">
+        <img className="header__logo" src={logo} alt="Logo" />
+        <h1 className="header__title">ColoRUSH</h1>
+      </Link>
+      <div className="header__user-block">
+        <button className="header__login-button">Login</button>
+        <img className="header__avatar" src={avatar} alt="Avatar" />
       </div>
     </header>
   );

@@ -1,0 +1,8 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+}
