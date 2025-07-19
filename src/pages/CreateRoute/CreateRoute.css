@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 .content-wrapper {
   background-color: rgba(0, 0, 0, 0.6);
@@ -40,6 +41,12 @@
   height: 60px;
 }
 
+.logo-img:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
 .app-name {
   font-size: 42px;
   font-weight: bold;
@@ -53,16 +60,27 @@
 
 .login-button {
   font-size: 18px;
-  background: none;
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
   cursor: pointer;
-  color: #333;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 
 .avatar-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.avatar-img:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .title {
@@ -79,7 +97,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  border: 2px solid #ccc;
+  background-color: #0077cc;
+  border: none;
   border-radius: 8px;
   margin-left: 21px;
   margin-bottom: 40px;
@@ -100,6 +119,11 @@
   align-items: center;
   gap: 8px;
   font-size: 16px;
+}
+
+.filter-option:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .activity-cards {
