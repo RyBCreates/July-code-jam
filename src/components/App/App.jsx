@@ -10,20 +10,17 @@ import OptimalRoute from "../pages/OptimalRoute/OptimalRoute";
 
 function App() {
   return (
-    <>
-      <div className="background-image"></div>
-      <div className="page">
-        <Header />
+    <div className="app">
+      <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/activities" element={<Activities />} />
-          <Route path="/user" element={<UserProfile />} />
-          <Route path="/create-your-adventure" element={<RouteBuilder />} />
-          <Route path="/optimal-route" element={<OptimalRoute />} />
-        </Routes>
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/activities" element={<Activities />} />
+        <Route path="/user" element={<UserProfile />} />
+        <Route path="/create-your-adventure" element={<RouteBuilder />} />
+        <Route path="/optimal-route" element={<OptimalRoute />} />
+      </Routes>
+    </div>
   );
 }
 
