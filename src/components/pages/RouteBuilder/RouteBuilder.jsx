@@ -1,10 +1,8 @@
-import "./CreateRoute.css";
+import "./RouteBuilder.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo/logo.png";
-import avatar from "../../../assets/images/default-avatar.svg";
 
-function CreateRoute() {
+function RouteBuilder() {
   const navigate = useNavigate();
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [difficultySelections, setDifficultySelections] = useState({});
@@ -30,19 +28,19 @@ function CreateRoute() {
   };
 
   return (
-    <div className="create-route-page">
-      <div className="content-wrapper">
-        <h2 className="title">
+    <div className="route-builder">
+      <div className="route-builder__content">
+        <h2 className="route-builder__title">
           Choose the activities that you want to experience
         </h2>
 
-        <div className="filter-menu">
-          <span className="filter-label">
+        <div className="route-builder__filter-menu">
+          <span className="route-builder__filter-label">
             Which activities would you like to try:
           </span>
-          <div className="filter-options">
+          <div className="route-builder__filter-options">
             {activities.map((activity) => (
-              <label key={activity} className="filter-option">
+              <label key={activity} className="route-builder__filter-option">
                 <input
                   type="checkbox"
                   checked={selectedActivities.includes(activity)}
@@ -54,13 +52,13 @@ function CreateRoute() {
           </div>
         </div>
 
-        <div className="activity-cards">
+        <div className="route-builder__activity-cards">
           {selectedActivities.map((activity) => (
-            <div key={activity} className="activity-card">
-              <h3 className="activity-name">{activity}</h3>
-              <div className="difficulty-options">
+            <div key={activity} className="route-builder__activity-card">
+              <h3 className="route-builder__activity-name">{activity}</h3>
+              <div className="route-builder__difficulty-options">
                 {difficulties.map((level) => (
-                  <label key={level} className="difficulty-card">
+                  <label key={level} className="route-builder__difficulty-card">
                     <input
                       type="radio"
                       name={`difficulty-${activity}`}
@@ -75,7 +73,10 @@ function CreateRoute() {
           ))}
         </div>
 
-        <button className="generate-route-btn" onClick={handleGenerateRoute}>
+        <button
+          className="route-builder__generate-route-btn"
+          onClick={handleGenerateRoute}
+        >
           Generate My Route
         </button>
       </div>
@@ -83,4 +84,4 @@ function CreateRoute() {
   );
 }
 
-export default CreateRoute;
+export default RouteBuilder;

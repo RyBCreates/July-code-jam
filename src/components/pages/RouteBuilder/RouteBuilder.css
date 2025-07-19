@@ -1,4 +1,4 @@
-.create-route-page {
+.route-builder {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0;
@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.content-wrapper {
+.route-builder__content {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 16px;
@@ -21,14 +21,14 @@
   align-items: center;
 }
 
-.title {
+.route-builder__title {
   font-size: 64px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
 }
 
-.filter-menu {
+.route-builder__filter-menu {
   width: 1106px;
   height: 65px;
   display: flex;
@@ -41,24 +41,24 @@
   margin-bottom: 40px;
 }
 
-.filter-label {
+.route-builder__filter-label {
   font-size: 18px;
   font-weight: 500;
 }
 
-.filter-options {
+.route-builder__filter-options {
   display: flex;
   gap: 24px;
 }
 
-.filter-option {
+.route-builder__filter-option {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 16px;
 }
 
-.activity-cards {
+.route-builder__activity-cards {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,7 @@
   margin-bottom: 60px;
 }
 
-.activity-card {
+.route-builder__activity-card {
   width: 1103px;
   height: 599px;
   border: 2px solid #ccc;
@@ -75,19 +75,19 @@
   box-sizing: border-box;
 }
 
-.activity-name {
+.route-builder__activity-name {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 24px;
 }
 
-.difficulty-options {
+.route-builder__difficulty-options {
   display: flex;
   justify-content: space-between;
   gap: 52px;
 }
 
-.difficulty-card {
+.route-builder__difficulty-card {
   width: 272px;
   height: 314px;
   border: 2px solid #999;
@@ -101,11 +101,11 @@
   cursor: pointer;
 }
 
-.difficulty-card input[type="radio"] {
+.route-builder__difficulty-card input[type="radio"] {
   transform: scale(1.5);
 }
 
-.generate-route-btn {
+.route-builder__generate-route-btn {
   width: 500px;
   height: 75px;
   font-size: 24px;
@@ -118,6 +118,6 @@
   transition: background-color 0.3s ease;
 }
 
-.generate-route-btn:hover {
+.route-builder__generate-route-btn:hover {
   background-color: #005fa3;
 }
