@@ -1,4 +1,3 @@
-// src/App.jsx
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -10,13 +9,18 @@ import OptimalRoute from "./pages/OptimalRoute";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/activities" element={<Activities />} />
-      <Route path="/user" element={<UserProfile />} />
-      <Route path="/create-your-adventure" element={<CreateRoute />} />
-      <Route path="/optimal-route" element={<OptimalRoute />} />
-    </Routes>
+    <>
+      <div className="background-image"></div>
+      <div className="page">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/user" element={<UserProfile />} />
+          <Route path="/create-your-adventure" element={<CreateRoute />} />
+          <Route path="/optimal-route" element={<OptimalRoute />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
