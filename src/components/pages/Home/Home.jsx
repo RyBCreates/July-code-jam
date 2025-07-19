@@ -13,7 +13,6 @@ function Home() {
       <Activities />
       <RoutePreview />
       <Testimonials />
-      <Footer />
     </div>
   );
 }

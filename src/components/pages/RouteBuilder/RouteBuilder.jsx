@@ -28,57 +28,63 @@ function RouteBuilder() {
   };
 
   return (
-    <div className="route-builder">
-      <div className="route-builder__content">
-        <h2 className="route-builder__title">
-          Choose the activities that you want to experience
-        </h2>
+    <div className="route-builder-wrapper">
+      <div className="route-background" />
+      <div className="route-builder">
+        <div className="route-builder__content">
+          <h2 className="route-builder__title">
+            Choose the activities that you want to experience
+          </h2>
 
-        <div className="route-builder__filter-menu">
-          <span className="route-builder__filter-label">
-            Which activities would you like to try:
-          </span>
-          <div className="route-builder__filter-options">
-            {activities.map((activity) => (
-              <label key={activity} className="route-builder__filter-option">
-                <input
-                  type="checkbox"
-                  checked={selectedActivities.includes(activity)}
-                  onChange={() => handleActivityToggle(activity)}
-                />
-                {activity}
-              </label>
+          <div className="route-builder__filter-menu">
+            <span className="route-builder__filter-label">
+              Which activities would you like to try:
+            </span>
+            <div className="route-builder__filter-options">
+              {activities.map((activity) => (
+                <label key={activity} className="route-builder__filter-option">
+                  <input
+                    type="checkbox"
+                    checked={selectedActivities.includes(activity)}
+                    onChange={() => handleActivityToggle(activity)}
+                  />
+                  {activity}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div className="route-builder__activity-cards">
+            {selectedActivities.map((activity) => (
+              <div key={activity} className="route-builder__activity-card">
+                <h3 className="route-builder__activity-name">{activity}</h3>
+                <div className="route-builder__difficulty-options">
+                  {difficulties.map((level) => (
+                    <label
+                      key={level}
+                      className="route-builder__difficulty-card"
+                    >
+                      <input
+                        type="radio"
+                        name={`difficulty-${activity}`}
+                        checked={difficultySelections[activity] === level}
+                        onChange={() => handleDifficultyChange(activity, level)}
+                      />
+                      <span>{level}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
-        </div>
 
-        <div className="route-builder__activity-cards">
-          {selectedActivities.map((activity) => (
-            <div key={activity} className="route-builder__activity-card">
-              <h3 className="route-builder__activity-name">{activity}</h3>
-              <div className="route-builder__difficulty-options">
-                {difficulties.map((level) => (
-                  <label key={level} className="route-builder__difficulty-card">
-                    <input
-                      type="radio"
-                      name={`difficulty-${activity}`}
-                      checked={difficultySelections[activity] === level}
-                      onChange={() => handleDifficultyChange(activity, level)}
-                    />
-                    <span>{level}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          ))}
+          <button
+            className="route-builder__generate-route-btn"
+            onClick={handleGenerateRoute}
+          >
+            Generate My Route
+          </button>
         </div>
-
-        <button
-          className="route-builder__generate-route-btn"
-          onClick={handleGenerateRoute}
-        >
-          Generate My Route
-        </button>
       </div>
     </div>
   );

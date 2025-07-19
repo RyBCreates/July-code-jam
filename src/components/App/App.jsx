@@ -7,6 +7,7 @@ import Activities from "../pages/Activities/Activities";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import RouteBuilder from "../pages/RouteBuilder/RouteBuilder";
 import OptimalRoute from "../pages/OptimalRoute/OptimalRoute";
+import Footer from "../Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/create-your-adventure" element={<RouteBuilder />} />
         <Route path="/optimal-route" element={<OptimalRoute />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
