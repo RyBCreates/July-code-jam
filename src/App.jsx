@@ -1,23 +1,22 @@
+// src/App.jsx
 import "./App.css";
-import Header from "./components/Header/Header";
-import HowItWorks from "./components/How-It-Works/How-It-Works";
-import Activities from "./components/Activities/Activities";
-import RoutePreview from "./components/Route-Preview/Route-Preview";
-import Form from "./components/Form/Form";
-import Testimonials from "./components/Testimonials/Testimonials";
-import Footer from "./components/Footer/Footer";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Activities from "./pages/Activities";
+import UserProfile from "./pages/UserProfile";
+import CreateRoute from "./pages/CreateRoute";
+import OptimalRoute from "./pages/OptimalRoute";
 
 function App() {
   return (
-    <div className="page">
-      <Header />
-      <HowItWorks />
-      <Activities />
-      <RoutePreview />
-      <Form />
-      <Testimonials />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/activities" element={<Activities />} />
+      <Route path="/user" element={<UserProfile />} />
+      <Route path="/create-your-route" element={<CreateRoute />} />
+      <Route path="/optimal-route" element={<OptimalRoute />} />
+    </Routes>
   );
 }
 
