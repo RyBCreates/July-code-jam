@@ -21,51 +21,6 @@
   align-items: center;
 }
 
-.create-route-header {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 60px;
-}
-
-.logo-block {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.logo-img {
-  width: 60px;
-  height: 60px;
-}
-
-.app-name {
-  font-size: 42px;
-  font-weight: bold;
-}
-
-.user-block {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.login-button {
-  font-size: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
-}
-
-.avatar-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
 .title {
   font-size: 64px;
   font-weight: bold;

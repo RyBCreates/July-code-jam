@@ -1,9 +1,9 @@
 .hero {
-  background: url("") center/cover no-repeat;
+  background-image: url("../../assets/images/hero.png");
+  /* background: url("") center/cover no-repeat; */
   color: white;
   text-align: center;
   padding: 100px 20px;
-  background-color: red;
 }
 
 .hero__content {

@@ -2,8 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "../Header/Header";
-import Hero from "../Hero/Hero";
-import Home from "../Home/Home";
+import Home from "../pages/Home/Home";
 import Activities from "../pages/Activities/Activities";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import CreateRoute from "../pages/CreateRoute/CreateRoute";
@@ -15,7 +14,7 @@ function App() {
       <div className="background-image"></div>
       <div className="page">
         <Header />
-        <Hero />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/activities" element={<Activities />} />

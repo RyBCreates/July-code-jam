@@ -31,16 +31,6 @@ function CreateRoute() {
 
   return (
     <div className="create-route-page">
-      <header className="create-route-header">
-        <div className="logo-block">
-          <img src={logo} alt="Logo" className="logo-img" />
-          <h1 className="app-name">ColoRUSH</h1>
-        </div>
-        <div className="user-block">
-          <button className="login-button">Login</button>
-          <img src={avatar} alt="Avatar" className="avatar-img" />
-        </div>
-      </header>
       <div className="content-wrapper">
         <h2 className="title">
           Choose the activities that you want to experience
