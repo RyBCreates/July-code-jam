@@ -1,17 +1,21 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Activities from "./pages/Activities";
-import UserProfile from "./pages/UserProfile";
-import CreateRoute from "./pages/CreateRoute/CreateRoute";
-import OptimalRoute from "./pages/OptimalRoute";
+import Header from "../Header/Header";
+import Hero from "../Hero/Hero";
+import Home from "../Home/Home";
+import Activities from "../pages/Activities";
+import UserProfile from "../UserProfile/UserProfile";
+import CreateRoute from "../pages/CreateRoute/CreateRoute";
+import OptimalRoute from "../OptimalRoute/OptimalRoute";
 
 function App() {
   return (
     <>
       <div className="background-image"></div>
       <div className="page">
+        <Header />
+        <Hero />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/activities" element={<Activities />} />

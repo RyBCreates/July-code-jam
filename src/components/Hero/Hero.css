@@ -1,0 +1,41 @@
+.hero {
+  background: url("") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: red;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: row;
+}
+
+.hero__logo img {
+  width: 150px;
+  height: auto;
+}
+
+.hero__content h1 {
+  font-size: 3rem;
+}
+
+.hero__content p {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0097a7; /* darker cyan */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+}

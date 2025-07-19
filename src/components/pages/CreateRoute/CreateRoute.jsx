@@ -1,8 +1,8 @@
 import "./CreateRoute.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
-import avatar from "../../assets/images/default-avatar.svg";
+import logo from "../../../assets/logo/logo.png";
+import avatar from "../../../assets/images/default-avatar.svg";
 
 function CreateRoute() {
   const navigate = useNavigate();
