@@ -1,5 +1,6 @@
 import "./header.css";
 import logo from "../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -11,9 +12,9 @@ function Header() {
         <div className="hero__tagline">
           <h1>Plan Your Ultimate Colorado Adventure</h1>
           <p>Pick your sports. We’ll map your adrenaline-filled route.</p>
-          <button href="#form-section" className="btn-primary">
-            Start Planning
-          </button>
+          <Link to="/create-your-adventure">
+            <button className="btn-primary">Start Planning</button>
+          </Link>
         </div>
       </div>
     </header>
