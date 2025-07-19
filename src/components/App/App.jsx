@@ -4,10 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import Home from "../Home/Home";
-import Activities from "../pages/Activities";
-import UserProfile from "../UserProfile/UserProfile";
+import Activities from "../pages/Activities/Activities";
+import UserProfile from "../pages/UserProfile/UserProfile";
 import CreateRoute from "../pages/CreateRoute/CreateRoute";
-import OptimalRoute from "../OptimalRoute/OptimalRoute";
+import OptimalRoute from "../pages/OptimalRoute/OptimalRoute";
 
 function App() {
   return (
