@@ -1,29 +1,16 @@
-import "./highlights.css";
-import activityBiking from "../../assets/images/mountainBiking.jpg";
+import HighlightCard from "../HighlightCard/HighlightCard";
 import activityHiking from "../../assets/images/hiking.jpg";
 import activityRafting from "../../assets/images/rafting.jpg";
+
+import "./highlights.css";
 
 function Highlights() {
   return (
     <section className="highlights">
       <h2>Activity Highlights</h2>
       <div className="highlight-cards">
-        <div
-          className="highlight-card"
-          style={{ backgroundImage: `url(${activityBiking})` }}
-        >
-          <div className="highlight-card__info">
-            <h3 className="highlight-card__title">Mountain Biking</h3>
-            <ul className="highlight-card__list">
-              <li>Crested Butte</li>
-              <li>Winter Park</li>
-              <li>Durango</li>
-            </ul>
-            <p className="highlight-card__difficulty">
-              <strong>Difficulty:</strong> Intermediate
-            </p>
-          </div>
-        </div>
+        <HighlightCard />
+        {/*  */}
         <div
           className="highlight-card"
           style={{ backgroundImage: `url(${activityHiking})` }}
@@ -40,6 +27,8 @@ function Highlights() {
             </p>
           </div>
         </div>
+        {/*  */}
+
         <div
           className="highlight-card"
           style={{ backgroundImage: `url(${activityRafting})` }}
@@ -56,6 +45,7 @@ function Highlights() {
             </p>
           </div>
         </div>
+        {/*  */}
       </div>
     </section>
   );
