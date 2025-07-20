@@ -188,6 +188,8 @@ const activities = [
 ];
 
 function OptimalRoute() {
+  const API_KEY = "AIzaSyDkPE0UYfDibIgUqLca2vpcQI1IZKOoiHE";
+
   return (
     <div>
       <main className="optimal-route">
@@ -243,7 +245,7 @@ function OptimalRoute() {
             height="400"
             loading="lazy"
             allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=${activities[0]?.location.lat},${activities[0]?.location.lng}&destination=${activities[2]?.location.lat},${activities[2]?.location.lng}&waypoints=${activities[1]?.location.lat},${activities[1]?.location.lng}`}
+            src={`https://www.google.com/maps/embed/v1/directions?key=${API_KEY}&origin=${activities[0]?.location.lat},${activities[0]?.location.lng}&destination=${activities[2]?.location.lat},${activities[2]?.location.lng}&waypoints=${activities[1]?.location.lat},${activities[1]?.location.lng}`}
           ></iframe>
         </div>
 
