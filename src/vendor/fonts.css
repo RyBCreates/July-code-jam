@@ -21,3 +21,10 @@
   font-weight: (700);
   src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
 }
+
+@font-face {
+  font-family: "Roboto-SemiBold";
+  font-style: SemiBold;
+  font-weight: (600);
+  src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
+}

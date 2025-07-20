@@ -4,7 +4,8 @@
   text-align: center;
   color: #033258;
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
-  font-size: 1.2vw;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-weight: bold;
 }
 .steps {
   display: flex;
@@ -13,8 +14,20 @@
   justify-content: center;
 }
 .step {
-  background: #f5f5f5;
+  background: transparent;
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
+  max-width: 350px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.step h3 {
+  height: 60px;
+}
+
+.step p {
+  margin: 10px 0 0;
+  font-size: clamp(1.3rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
 }
