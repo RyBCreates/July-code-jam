@@ -1,5 +1,5 @@
 .highlights {
-  background: #fafafa;
+  background: transparent;
   color: black;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   text-align: center;
@@ -7,6 +7,12 @@
   color: #033258;
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
+  padding: 2rem;
+}
+
+.highlights h2 {
+  margin: 0;
+  padding: 0 0 2%;
 }
 
 .highlight-cards {

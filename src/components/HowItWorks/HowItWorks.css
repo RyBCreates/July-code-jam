@@ -1,18 +1,26 @@
 .how-it-works {
-  background: #fff;
+  background: transparent;
   padding: 60px 20px;
   text-align: center;
   color: #033258;
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
   font-weight: bold;
+  
 }
+
+.how-it-works h2 {
+  margin: 0;
+  padding: 0 0 2%;
+}
+
 .steps {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
+
 .step {
   display: flex;
   flex-direction: column;
@@ -25,13 +33,17 @@
 
 .step img {
   min-width: 50px;
-  min=height: 50px;
+  min-height: 50px;
+  height: auto;
+  width: auto;
   align-self: center;
+  object-fit: contain;
 }
 
 .step h3 {
   height: 60px;
   font-size: clamp(1.8rem, 2vw, 1.5rem);
+  margin: 0;
 }
 
 .step p {

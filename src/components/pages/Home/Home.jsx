@@ -1,3 +1,4 @@
+import "./home.css";
 import Hero from "../../Hero/Hero";
 import HowItWorks from "../../HowItWorks/HowItWorks";
 import Activities from "../../Highlights/Highlights";
