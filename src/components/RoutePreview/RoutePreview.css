@@ -3,7 +3,17 @@
   background: #fff;
   color: black;
 }
-.map-preview {
+
+.route-preview__title {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  color: #033258;
+  font-family: "Roboto-Bold", sans-serif;
+  margin-bottom: 40px;
+}
+
+.route-preview__map {
   background: #ddd;
   height: 400px;
   border-radius: 10px;

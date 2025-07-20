@@ -8,6 +8,9 @@ import Activities from "../pages/Activities/Activities";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import RouteBuilder from "../pages/RouteBuilder/RouteBuilder";
 import OptimalRoute from "../pages/OptimalRoute/OptimalRoute";
+import About from "../pages/About/About";
+import Questions from "../pages/Questions/Questions";
+import Contact from "../pages/Contact/Contact";
 import Footer from "../Footer/Footer";
 
 import LoginModal from "../modals/LoginModal/LoginModal";
@@ -26,6 +29,15 @@ function App() {
     setActiveModal("register-modal");
   };
 
+  // Switch Between Register and Login Modals
+  const handleSwitchModal = () => {
+    if (activeModal === "login-modal") {
+      setActiveModal("register-modal");
+    } else {
+      setActiveModal("login-modal");
+    }
+  };
+
   // Close Modal
   const closeModal = () => {
     setActiveModal("");
@@ -38,18 +50,28 @@ function App() {
           handleLoginClick={handleLoginClick}
           handleRegisterClick={handleRegisterClick}
         />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/user" element={<UserProfile />} />
           <Route path="/create-your-adventure" element={<RouteBuilder />} />
           <Route path="/optimal-route" element={<OptimalRoute />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/questions" element={<Questions />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>
-      <LoginModal activeModal={activeModal} closeModal={closeModal} />
-      <RegisterModal activeModal={activeModal} closeModal={closeModal} />
+      <LoginModal
+        activeModal={activeModal}
+        closeModal={closeModal}
+        handleSwitchModal={handleSwitchModal}
+      />
+      <RegisterModal
+        activeModal={activeModal}
+        closeModal={closeModal}
+        handleSwitchModal={handleSwitchModal}
+      />
     </div>
   );
 }

@@ -1,0 +1,4 @@
+.contact__text-input {
+  display: flex;
+  flex-direction: column;
+}

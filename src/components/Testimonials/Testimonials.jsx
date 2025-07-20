@@ -3,7 +3,7 @@ import "./testimonials.css";
 function Testimonials() {
   return (
     <section className="testimonials">
-      <h2>What Our Users Say</h2>
+      <h2 className="testimonials__title">What Our Users Say</h2>
       <div className="testimonial-cards">
         <article className="testimonial">
           <p>“This app made our trip unforgettable!”</p>
@@ -18,7 +18,7 @@ function Testimonials() {
           </p>
         </article>
         <article className="testimonial">
-          <p>“Easy to use and totally accurate. Highly recommend.”</p>
+          <p>“Beginner to use and totally accurate. Highly recommend.”</p>
           <p>
             <strong>- Jamie, Austin</strong>
           </p>

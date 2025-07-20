@@ -3,10 +3,17 @@
   color: black;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   text-align: center;
+  color: #033258;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+
+}
+
+.highlights__title {
+  padding: 0 20px 30px;
   text-align: center;
   color: #033258;
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-size: 60px;
 }
 
 .highlight-cards {
@@ -14,7 +21,6 @@
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
-  
 }
 
 .highlight-card {
@@ -74,3 +80,4 @@
   font-size: clamp(1.2rem, 1.2vw, 1.5rem);
   color: #555;
 }
+

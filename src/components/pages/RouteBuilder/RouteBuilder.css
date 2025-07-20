@@ -41,6 +41,7 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   margin: 0 auto 60px auto;
   margin: 60px auto;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -66,9 +67,12 @@
   margin-bottom: 40px;
 }
 
-.route-builder__filter-label {
-  font-size: 18px;
-  font-weight: 500;
+.route-builder__filter-menu-label {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: block;
+  color: white;
 }
 
 .route-builder__filter-options {
@@ -80,7 +84,30 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.route-builder__difficulty-group {
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: #f2faff;
+  border: 1px solid #cce4ff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1106px;
+}
+
+.route-builder__filter-label {
+  font-size: 36px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: block;
+  color: black;
 }
 
 .route-builder__activity-cards {
@@ -98,6 +125,22 @@
   border-radius: 12px;
   padding: 32px;
   box-sizing: border-box;
+}
+
+.route-builder__activity-image {
+  width: 100%;
+  max-width: 300px;
+  height: 314px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.route-builder__activity-info {
+  color: black;
+  font-size: 24px;
 }
 
 .route-builder__activity-name {
@@ -141,6 +184,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 40px auto 60px auto;
 }
 
 .route-builder__generate-route-btn:hover {
