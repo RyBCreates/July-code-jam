@@ -8,12 +8,15 @@ function Highlights() {
     <section className="highlights">
       <h2>Activity Highlights</h2>
       <div className="highlight-cards">
-        <div
-          className="highlight-card"
-          style={{ backgroundImage: `url(${activityBiking})` }}
-        >
-          <div className="highlight-card__info">
+        <div className="highlight-card">
+          <img
+            className="highlight-card__image"
+            src={activityBiking}
+            alt="Mountain Biking"
+          />
+          <div className="highlight-card__content">
             <h3 className="highlight-card__title">Mountain Biking</h3>
+            <hr style={{ border: "2px solid #ccc", borderRadius: "8px", margin: "0" }} />
             <ul className="highlight-card__list">
               <li>Crested Butte</li>
               <li>Winter Park</li>
@@ -24,12 +27,15 @@ function Highlights() {
             </p>
           </div>
         </div>
-        <div
-          className="highlight-card"
-          style={{ backgroundImage: `url(${activityHiking})` }}
-        >
-          <div className="highlight-card__info">
-            <h3 className="highlight__title">Hiking</h3>
+        <div className="highlight-card">
+          <img
+            className="highlight-card__image"
+            src={activityHiking}
+            alt="Mountain Biking"
+          />
+          <div className="highlight-card__content">
+            <h3 className="highlight-card__title">Hiking Trails</h3>
+            <hr style={{ border: "2px solid #ccc", borderRadius: "8px", margin: "0" }} />
             <ul className="highlight-card__list">
               <li>Rocky Mountain NP</li>
               <li>Maroon Bells</li>
@@ -40,12 +46,15 @@ function Highlights() {
             </p>
           </div>
         </div>
-        <div
-          className="highlight-card"
-          style={{ backgroundImage: `url(${activityRafting})` }}
-        >
-          <div className="highlight-card__info">
+        <div className="highlight-card">
+          <img
+            className="highlight-card__image"
+            src={activityRafting}
+            alt="Mountain Biking"
+          />
+          <div className="highlight-card__content">
             <h3 className="highlight-card__title">White-water Rafting</h3>
+            <hr style={{ border: "2px solid #ccc", borderRadius: "8px", margin: "0" }} />
             <ul className="highlight-card__list">
               <li>Royal Gorge</li>
               <li>Browns Canyon</li>
