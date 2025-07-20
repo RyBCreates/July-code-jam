@@ -1,22 +1,20 @@
-import activityBiking from "../../assets/images/mountainBiking.jpg";
-
 import "./HighlightCard.css";
 
-function HighlightCard() {
+function HighlightCard({ activity }) {
   return (
     <div
       className="highlight-card"
-      style={{ backgroundImage: `url(${activityBiking})` }}
+      style={{ backgroundImage: `url(${activity.image})` }}
     >
       <div className="highlight-card__info">
-        <h3 className="highlight-card__title">Mountain Biking</h3>
+        <h3 className="highlight-card__title">{activity.name}</h3>
         <ul className="highlight-card__list">
-          <li>Crested Butte</li>
-          <li>Winter Park</li>
-          <li>Durango</li>
+          {activity.locations.map((location, idx) => (
+            <li key={idx}>{location}</li>
+          ))}
         </ul>
         <p className="highlight-card__difficulty">
-          <strong>Difficulty:</strong> Intermediate
+          <strong>Difficulty:</strong> {activity.difficulty}
         </p>
       </div>
     </div>
