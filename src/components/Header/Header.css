@@ -14,7 +14,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .header__logo {
@@ -22,19 +23,25 @@
   height: 60px;
 }
 
+.header__logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 .header__title {
   font-size: 42px;
   font-weight: bold;
   margin: 0;
   color: white;
-  text-decoration: none; 
-  cursor:pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .header__user-block {
   display: flex;
-  
+  margin-right: 30px;
   gap: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .header__register-button {
@@ -42,6 +49,12 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header__register-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
   color: white;
 }
 
@@ -50,6 +63,12 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header__login-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
   color: white;
 }
 
@@ -59,6 +78,11 @@
   border-radius: 50%;
 }
 
+.header__avatar:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
   .header {
@@ -85,5 +109,4 @@
   .header__login-button {
     font-size: 16px;
   }
-  
 }

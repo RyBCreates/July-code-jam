@@ -126,6 +126,8 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "Yes",
     camping: "No",
+    image:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/98/51/43/hanging-lake.jpg?w=1200&h=-1&s=1",
   },
   {
     name: "Mount Evans Wilderness",
@@ -137,6 +139,8 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "Yes",
     camping: "Yes",
+    image:
+      "https://onecoolthingeveryweekend.com/wp-content/uploads/2014/10/2014-bierstadt-hike-5.jpg?w=1440",
   },
   {
     name: "Maroon Bells",
@@ -184,4 +188,4 @@ const activities = [
   },
 ];
 
-export { activities };
+export default activities;

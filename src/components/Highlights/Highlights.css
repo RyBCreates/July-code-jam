@@ -2,11 +2,20 @@
   background: #fafafa;
   padding: 60px 20px;
   color: black;
+  font-family: "Roboto", sans-serif;
+}
+
+.highlights__title {
+  padding: 0 20px 30px;
+  text-align: center;
+  color: #033258;
+  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
+  font-size: 60px;
 }
 
 .highlight-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
 }

@@ -6,7 +6,7 @@ import "./highlights.css";
 function Highlights() {
   return (
     <section className="highlights">
-      <h2>Activity Highlights</h2>
+      <h2 className="highlights__title">Activity Highlights</h2>
       <div className="highlight-cards">
         {highlightActivities.map((activity, index) => (
           <HighlightCard activity={activity} key={index} />
