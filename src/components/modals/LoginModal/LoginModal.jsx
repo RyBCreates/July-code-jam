@@ -3,7 +3,7 @@ import closeButton from "../../../assets/icons/close-button.svg";
 import "../Modals.css";
 import "./LoginModal.css";
 
-function LoginModal({ activeModal, closeModal }) {
+function LoginModal({ activeModal, closeModal, handleSwitchModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -51,7 +51,13 @@ function LoginModal({ activeModal, closeModal }) {
           </div>
           <div className="modal__auth-buttons">
             <button className="modal__submit-button">Log In</button>
-            <button className="modal__button_alternate" type="submit">
+            <button
+              className="modal__button_alternate"
+              type="button"
+              onClick={() => {
+                handleSwitchModal();
+              }}
+            >
               or Sign Up
             </button>
           </div>

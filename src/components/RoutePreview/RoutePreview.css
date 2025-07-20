@@ -3,7 +3,7 @@
   background: #fff;
   color: black;
 }
-.map-preview {
+.route-preview__map {
   background: #ddd;
   height: 400px;
   border-radius: 10px;

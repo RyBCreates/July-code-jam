@@ -26,6 +26,15 @@ function App() {
     setActiveModal("register-modal");
   };
 
+  // Switch Between Register and Login Modals
+  const handleSwitchModal = () => {
+    if (activeModal === "login-modal") {
+      setActiveModal("register-modal");
+    } else {
+      setActiveModal("login-modal");
+    }
+  };
+
   // Close Modal
   const closeModal = () => {
     setActiveModal("");
@@ -48,8 +57,16 @@ function App() {
         </Routes>
         <Footer />
       </div>
-      <LoginModal activeModal={activeModal} closeModal={closeModal} />
-      <RegisterModal activeModal={activeModal} closeModal={closeModal} />
+      <LoginModal
+        activeModal={activeModal}
+        closeModal={closeModal}
+        handleSwitchModal={handleSwitchModal}
+      />
+      <RegisterModal
+        activeModal={activeModal}
+        closeModal={closeModal}
+        handleSwitchModal={handleSwitchModal}
+      />
     </div>
   );
 }
