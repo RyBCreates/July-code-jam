@@ -3,17 +3,51 @@
   text-align: center;
   color: #033258;
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: bold;
 }
 .steps {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
 }
 .step {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  max-width: 360px;
+  gap: 20px;
+ align-items: center;
+  justify-items: space-between;
   background: #f5f5f5;
   padding: 20px;
-  border-radius: 10px;
-  width: 300px;
+}
+
+.step img {
+  min-width: 50px;
+  min=height: 50px;
+  align-self: center;
+}
+
+.step h3 {
+  height: 60px;
+  font-size: clamp(1.8rem, 2vw, 1.5rem);
+}
+
+.step p {
+  margin: 10px 0 0;
+  font-size: clamp(1.3rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
+
+
+.how-it-works__icon {
+  background-color: transparent;
+  width: 120px;
+  height: 120px;
+}
+
+.how-it-works__description {
+  margin-top: auto;
 }

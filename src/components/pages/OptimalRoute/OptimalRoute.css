@@ -5,8 +5,9 @@
 }
 
 .optimal-route__title {
-  font-size: 2rem;
-  margin-bottom: 40px;
+  font-size: 61px;
+  margin: 50px 100px 40px;
+  font-family: "Roboto", sans-serif;
 }
 
 .activity-cards {
@@ -43,16 +44,48 @@
   max-width: 1000px;
 }
 
+.route-controls {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-reset {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
+}
 .btn-download {
   background-color: #ff6600;
   color: white;
   padding: 12px 24px;
-  font-size: 1rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  margin: 0 40px 40px;
+}
+
+.btn-save {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
 }
 
 .btn-download:hover {
+  background-color: #cc5200;
+}
+
+.btn-reset:hover {
+  background-color: #cc5200;
+}
+
+.btn-save:hover {
   background-color: #cc5200;
 }
