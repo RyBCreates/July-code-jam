@@ -16,9 +16,9 @@
   background-size: cover;
   background-position: top center;
   min-height: 650px;
-  max-width: 1280px;
+  max-width: 1440px;
   width: 100%;
-  margin: 0 5vw;
+  margin: 0 5rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
