@@ -47,7 +47,6 @@ function App() {
           handleLoginClick={handleLoginClick}
           handleRegisterClick={handleRegisterClick}
         />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/activities" element={<Activities />} />
