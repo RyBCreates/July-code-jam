@@ -4,4 +4,12 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #FFFCF2;
+  
+}
+
+h2 {
+  font-size: clamp(3rem, 2.5vw, 3rem);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 2% 0;
 }

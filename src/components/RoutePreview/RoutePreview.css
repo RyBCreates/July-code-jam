@@ -1,7 +1,10 @@
 .route-preview {
   padding: 60px 20px;
-  background: #fff;
-  color: black;
+  background: transparent;
+  color: o;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .route-preview__title {
@@ -15,9 +18,11 @@
 
 .route-preview__map {
   background: #ddd;
-  height: 400px;
+  height: 100%;
   border-radius: 10px;
   text-align: center;
   line-height: 400px;
   font-size: 1.2rem;
+  max-width: 800px;
+  min-width: 60vw;
 }
