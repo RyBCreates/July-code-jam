@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 function Footer() {
@@ -6,7 +7,8 @@ function Footer() {
       <div className="footer__content">
         <p>Created by FullyStacked team &copy; 2025 ColoRUSH</p>
         <nav>
-          <a href="#">About</a> | <a href="#">FAQ</a> | <a href="#">Contact</a>
+          <Link to="/about">About</Link> | <Link to="/questions">FAQ</Link> |{" "}
+          <Link to="/contact">Contact</Link>
         </nav>
       </div>
     </footer>
