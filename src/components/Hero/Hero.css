@@ -1,23 +1,31 @@
 .hero {
-  
   width: 100%;
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   color: #fff;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
   background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .hero__content {
   background: url("../../assets/images/Hero.png") top center no-repeat;
-  background-size: contain;
-  max-height: 650px;
+  background-size: cover;
+  background-position: top center;
+  min-height: 650px;
+  max-width: 1280px;
   width: 100%;
+  margin: 0 5vw;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   box-sizing: border-box;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
+  border-radius: 0 0 15px 15px;
 }
 
 .hero__text {
@@ -33,7 +41,7 @@
 .hero__title {
   margin: 0;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: clamp(1.2rem, 4.5vw, 3.8rem);
+  font-size: clamp(1.2rem, 4.5vw, 3.5rem);
   font-weight: bold;
   line-height: 1.1;
 }
