@@ -14,7 +14,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  
+  text-decoration: none;
+  color: white;
 }
 
 .header__logo {
@@ -27,13 +28,12 @@
   font-weight: bold;
   margin: 0;
   color: white;
-  text-decoration: none; 
-  cursor:pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .header__user-block {
   display: flex;
-  
   gap: 20px;
 }
 
@@ -58,7 +58,6 @@
   height: 40px;
   border-radius: 50%;
 }
-
 
 @media screen and (max-width: 768px) {
   .header {
@@ -85,5 +84,4 @@
   .header__login-button {
     font-size: 16px;
   }
-  
 }

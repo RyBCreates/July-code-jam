@@ -1,5 +1,4 @@
 .hero {
-  
   height: 650px;
   max-width: 100%;
   color: #fff;
@@ -57,7 +56,6 @@
   font-size: 1.7vw;
   font-weight: bold;
   border-radius: 10px;
-  
 }
 
 .btn-primary:hover {
@@ -69,5 +67,5 @@
   .hero {
     height: 800px;
     margin: 0 20px;
-}
+  }
 }
