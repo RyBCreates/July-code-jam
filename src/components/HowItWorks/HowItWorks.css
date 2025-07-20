@@ -1,15 +1,14 @@
 .how-it-works {
   background: transparent;
-  padding: 60px 20px;
   text-align: center;
   color: #033258;
-  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
-  font-weight: bold;
-  
+  gap: 20px 0;
 }
 
 .how-it-works h2 {
+  font-size: clamp(3rem, 3vw, 4rem);
   margin: 0;
   padding: 0 0 2%;
 }
