@@ -10,15 +10,8 @@
 
 @font-face {
   font-family: "Roboto";
-  font-style: normal;
-  font-weight: 100 900;
-  src: url(../vendor/fonts/Roboto-VariableFont_wdth,wght.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto-regular";
-  font-style: regular;
-  font-weight: (400);
+  font-style: Normal;
+  font-weight: 500;
   src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
 }
 

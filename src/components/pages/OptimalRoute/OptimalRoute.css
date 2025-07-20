@@ -1,0 +1,91 @@
+.optimal-route {
+  padding: 60px 20px;
+  background: #fffcf2;
+  text-align: center;
+}
+
+.optimal-route__title {
+  font-size: 61px;
+  margin: 50px 100px 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.activity-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+}
+
+.activity-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.activity-card__details {
+  padding: 16px;
+  font-size: 0.95rem;
+}
+
+.route-map {
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.route-controls {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-reset {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
+}
+.btn-download {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
+}
+
+.btn-save {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
+}
+
+.btn-download:hover {
+  background-color: #cc5200;
+}
+
+.btn-reset:hover {
+  background-color: #cc5200;
+}
+
+.btn-save:hover {
+  background-color: #cc5200;
+}

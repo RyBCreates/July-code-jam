@@ -3,7 +3,7 @@ import closeButton from "../../../assets/icons/close-button.svg";
 import "../Modals.css";
 import "./RegisterModal.css";
 
-function RegisterModal({ activeModal, closeModal }) {
+function RegisterModal({ activeModal, closeModal, handleSwitchModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -69,9 +69,18 @@ function RegisterModal({ activeModal, closeModal }) {
               ></input>
             </label>
           </div>
-          <button className="modal__button_alternate" type="button">
-            or Log in
-          </button>
+          <div className="modal__auth-buttons">
+            <button className="modal__submit-button">Register</button>
+            <button
+              className="modal__button_alternate"
+              type="button"
+              onClick={() => {
+                handleSwitchModal();
+              }}
+            >
+              or Log In
+            </button>
+          </div>
         </form>
       </div>
     </div>

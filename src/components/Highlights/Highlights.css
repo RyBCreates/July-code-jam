@@ -1,17 +1,15 @@
 .highlights {
   background: transparent;
-  color: black;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   text-align: center;
-  text-align: center;
   color: #033258;
-  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
 }
 
-.highlights h2 {
+.highlights__title {
   font-size: clamp(3rem, 3vw, 4rem);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0 0 2%;
+  padding: 2% 0;
 }
 
 .highlight-cards {
@@ -19,7 +17,6 @@
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
-  
 }
 
 .highlight-card {
@@ -31,9 +28,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-size: cover;
   background-position: center;
-  color: black;
   text-align: left
-  
 }
 
 .highlight-card__image {
@@ -60,6 +55,7 @@
   min-height: 2em;
   display: flex;
   align-items: center;
+  line-height: 2.2vmin;
 }
 
 
@@ -78,3 +74,4 @@
   font-size: clamp(1.2rem, 1.2vw, 1.5rem);
   color: #555;
 }
+

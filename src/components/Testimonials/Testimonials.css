@@ -18,14 +18,28 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
   gap: 20px;
   
 }
 
+.testimonials__title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #033258;
+  font-family: "Roboto-SemiBold", sans-serif;
+}
+
+
+
 .testimonials-card {
   background: #f0f0f0;
   padding: 20px;
+  width: 350px;
   border-radius: 10px;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
   max-width: 400px;
   min-width: 300px;
 }

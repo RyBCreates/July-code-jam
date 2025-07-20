@@ -2,6 +2,6 @@
 @import url(./vendor/fonts.css);
 
 body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #FFFCF2;
 }
-
