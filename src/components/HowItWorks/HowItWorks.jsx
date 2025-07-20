@@ -6,17 +6,17 @@ function HowItWorks() {
       <h2>How It Works</h2>
       <div className="steps">
         <article className="step">
-          <img src="../../assets/images/step1.png" alt="Tag Icon" />
-          <h3>1. Select your extreme sports</h3>
-          <p>Choose from biking, rafting, climbing, and more.</p>
+          <img src="../../assets/icons/tag.svg" alt="Tag Icon" />
+          <h3>1. CHOOSE YOUR TAGS</h3>
+          <p>Select your preferred sport, skill level, climate, and dates</p>
         </article>
         <article className="step">
-          <h3>2. Get your custom route</h3>
-          <p>We calculate the shortest, most epic path.</p>
+          <h3>2. WE FIND THE BEST MATCHES</h3>
+          <p>We match you with today's best and most exciting activities</p>
         </article>
         <article className="step">
-          <h3>3. Adventure begins</h3>
-          <p>Gear up and explore Colorado like never before.</p>
+          <h3>3. GET A PERSONALIZED ITINERARY</h3>
+          <p>Customize your trip and save your booking instantly</p>
         </article>
       </div>
     </section>
