@@ -8,6 +8,9 @@ import Activities from "../pages/Activities/Activities";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import RouteBuilder from "../pages/RouteBuilder/RouteBuilder";
 import OptimalRoute from "../pages/OptimalRoute/OptimalRoute";
+import About from "../pages/About/About";
+import Questions from "../pages/Questions/Questions";
+import Contact from "../pages/Contact/Contact";
 import Footer from "../Footer/Footer";
 
 import LoginModal from "../modals/LoginModal/LoginModal";
@@ -53,6 +56,9 @@ function App() {
           <Route path="/user" element={<UserProfile />} />
           <Route path="/create-your-adventure" element={<RouteBuilder />} />
           <Route path="/optimal-route" element={<OptimalRoute />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/questions" element={<Questions />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>
