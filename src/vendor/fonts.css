@@ -6,3 +6,18 @@
 } */
 
 /* Font Template for adding new ones ^^^^ */
+
+
+@font-face {
+  font-family: "Roboto";
+  font-style: Normal;
+  font-weight: 500;
+  src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  font-style: Bold;
+  font-weight: (700);
+  src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
+}

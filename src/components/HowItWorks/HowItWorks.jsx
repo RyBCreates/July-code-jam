@@ -6,6 +6,7 @@ function HowItWorks() {
       <h2>How It Works</h2>
       <div className="steps">
         <article className="step">
+          <img src="../../assets/images/step1.png" alt="Tag Icon" />
           <h3>1. Select your extreme sports</h3>
           <p>Choose from biking, rafting, climbing, and more.</p>
         </article>

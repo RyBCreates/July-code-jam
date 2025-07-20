@@ -1,5 +1,4 @@
 .header {
-  width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -8,13 +7,14 @@
   margin: 0;
   background-color: #3b4d3e;
   z-index: 10;
-  position: relative;
+  padding: 0 50px;
 }
 
 .header__logo-container {
   display: flex;
   align-items: center;
   gap: 16px;
+  
 }
 
 .header__logo {
@@ -26,12 +26,15 @@
   font-size: 42px;
   font-weight: bold;
   margin: 0;
+  color: white;
+  text-decoration: none; 
+  cursor:pointer;
 }
 
 .header__user-block {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  
+  gap: 20px;
 }
 
 .header__register-button {
@@ -54,4 +57,33 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .header__logo-container {
+    margin-bottom: 20px;
+  }
+
+  .header__title {
+    font-size: 32px;
+  }
+
+  .header__user-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__register-button,
+  .header__login-button {
+    font-size: 16px;
+  }
+  
 }
