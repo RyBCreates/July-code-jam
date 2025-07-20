@@ -11,6 +11,7 @@ function Highlights() {
         {highlightActivities.map((activity, index) => (
           <HighlightCard activity={activity} key={index} />
         ))}
+
       </div>
     </section>
   );
