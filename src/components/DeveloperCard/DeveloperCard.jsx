@@ -1,5 +1,6 @@
 import Ryan from "../../assets/images/developer-profiles/Ryan-Profile.jpg";
 import Farida from "../../assets/images/developer-profiles/Farida-Profile.jpeg";
+import Sohini from "../../assets/images/developer-profiles/Sohini-Profile.jpeg";
 import "./DeveloperCard.css";
 
 function DeveloperCard() {
@@ -31,7 +32,7 @@ function DeveloperCard() {
             src={Farida}
             alt="Farida Nelson"
           ></img>
-          <h2 className="developer-card__name">Farida</h2>
+          <h2 className="developer-card__name">Farida Nelson</h2>
           <p className="developer-card__type">Software Engineer</p>
           <p className="developer-card__bio">
             Founder of Farida Nelson Music LLC and leader of a Jazz Rock Fusion
@@ -52,10 +53,20 @@ function DeveloperCard() {
       </li>
       <li className="developer-card">
         <div className="developer-card__wrapper">
-          <img className="developer-card__image"></img>
+          <img
+            className="developer-card__image developer-card__image_sohini"
+            src={Sohini}
+            alt="Sohini Das"
+          ></img>
           <h2 className="developer-card__name">Sohini</h2>
           <p className="developer-card__type">Data Scientist</p>
-          <p className="developer-card__bio">This is the bio</p>
+          <p className="developer-card__bio">
+            Sohini Tomar Data Scientist, Seasoned business professional with
+            strong analytical skills turned data scientist, blending strategic
+            insight with a passion for cross-functional collaboration. I bring
+            global experience and a results-driven mindset to uncover
+            data-driven solutions that create impact.
+          </p>
         </div>
       </li>
       <li className="developer-card">
