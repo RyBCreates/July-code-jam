@@ -67,7 +67,24 @@ function OptimalRoute() {
           <button
             className="btn-download"
             onClick={() => {
-              // Replace with actual offline download logic
+              const origin = selectedActivities[0]?.location;
+              const destination =
+                selectedActivities[selectedActivities.length - 1]?.location;
+
+              const waypoints = selectedActivities
+                .slice(1, selectedActivities.length - 1)
+                .map((act) => `${act.location.lat},${act.location.lng}`)
+                .join("|");
+
+              const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${
+                origin.lat
+              },${origin.lng}&destination=${destination.lat},${
+                destination.lng
+              }${
+                waypoints ? `&waypoints=${waypoints}` : ""
+              }&travelmode=driving`;
+
+              window.open(mapsUrl, "_blank");
             }}
           >
             Download map for use offline
@@ -80,7 +97,7 @@ function OptimalRoute() {
               alert("Route saved!");
             }}
           >
-            Save
+            Save Your Route
           </button>
         </div>
 
@@ -101,8 +118,18 @@ function OptimalRoute() {
                   <strong>Coordinates:</strong> {activity.location.lat},{" "}
                   {activity.location.lng}
                 </p>
-                <p>
-                  <strong>Difficulty:</strong> {activity.difficulty}
+                <p className="route-builder__activity_info-text-trail">
+                  <strong>Trail:</strong> {activity.trail}
+                </p>
+                <p className="route-builder__activity_info-gear-needed">
+                  <strong>Gear Needed:</strong> {activity.gearNeeded}
+                </p>
+                <p className="route-builder__activity_info-camping">
+                  <strong>Camping:</strong> {activity.camping}
+                </p>
+                <p className="route-builder__activity_info-text-difficulty">
+                  {/* <strong>Difficulty:</strong>{" "} */}
+                  {activity.difficulty}
                 </p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import Ryan from "../../assets/images/developer-profiles/Ryan-Profile.jpg";
+import Farida from "../../assets/images/developer-profiles/Farida-Profile.jpeg";
 import "./DeveloperCard.css";
 
 function DeveloperCard() {
@@ -25,10 +26,20 @@ function DeveloperCard() {
       </li>
       <li className="developer-card">
         <div className="developer-card__wrapper">
-          <img className="developer-card__image"></img>
+          <img
+            className="developer-card__image developer-card__image_farida"
+            src={Farida}
+            alt="Farida Nelson"
+          ></img>
           <h2 className="developer-card__name">Farida</h2>
           <p className="developer-card__type">Software Engineer</p>
-          <p className="developer-card__bio">This is the bio</p>
+          <p className="developer-card__bio">
+            Founder of Farida Nelson Music LLC and leader of a Jazz Rock Fusion
+            Trio turned full-stack developer, I blend technical skill with
+            artistic vision. Whether I'm building an app or composing a setlist,
+            I bring innovation, precision, and a passion for creativity to to
+            every project I take on.
+          </p>
         </div>
       </li>
       <li className="developer-card">
