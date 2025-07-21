@@ -118,8 +118,18 @@ function OptimalRoute() {
                   <strong>Coordinates:</strong> {activity.location.lat},{" "}
                   {activity.location.lng}
                 </p>
-                <p>
-                  <strong>Difficulty:</strong> {activity.difficulty}
+                <p className="route-builder__activity_info-text-trail">
+                  <strong>Trail:</strong> {activity.trail}
+                </p>
+                <p className="route-builder__activity_info-gear-needed">
+                  <strong>Gear Needed:</strong> {activity.gearNeeded}
+                </p>
+                <p className="route-builder__activity_info-camping">
+                  <strong>Camping:</strong> {activity.camping}
+                </p>
+                <p className="route-builder__activity_info-text-difficulty">
+                  {/* <strong>Difficulty:</strong>{" "} */}
+                  {activity.difficulty}
                 </p>
               </div>
             </div>
