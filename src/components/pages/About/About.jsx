@@ -11,7 +11,7 @@ function About() {
         known as a CodeJam, this project challenged us to rapidly design and
         build a functional MVP. ColoRUSH is an adventure-planning app that helps
         users discover and organize exciting outdoor activities like hiking,
-        biking, and rafting—tailored to their preferences. With speed,
+        biking, and rafting, tailored to their preferences. With speed,
         collaboration, and creativity at its core, ColoRUSH is our take on
         making trip planning effortless and fun.
       </p>
