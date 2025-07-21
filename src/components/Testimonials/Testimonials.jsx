@@ -1,23 +1,36 @@
 import "./testimonials.css";
+import ExamplePhoto from "../../assets/images/Example-Photo.jpg"
 
 function Testimonials() {
   return (
     <section className="testimonials">
-      <h2 className="testimonials__title">What Our Users Say</h2>
-      <div className="testimonial-cards">
-        <article className="testimonial">
+      <h2>What Our Users Say</h2>
+      <div className="testimonials-cards">
+        <article className="testimonials-card">
+          <img
+            src= {ExamplePhoto}
+            alt="User testimonial"
+          />
           <p>“This app made our trip unforgettable!”</p>
           <p>
             <strong>- Alex, Denver</strong>
           </p>
         </article>
-        <article className="testimonial">
+        <article className="testimonials-card">
+          <img
+            src= {ExamplePhoto}
+            alt="User testimonial"
+          />
           <p>“We hit all the right spots with no stress. Love it!”</p>
           <p>
             <strong>- Morgan, Chicago</strong>
           </p>
         </article>
-        <article className="testimonial">
+        <article className="testimonials-card">
+          <img
+            src= {ExamplePhoto}
+            alt="User testimonial"
+          />
           <p>“Beginner to use and totally accurate. Highly recommend.”</p>
           <p>
             <strong>- Jamie, Austin</strong>

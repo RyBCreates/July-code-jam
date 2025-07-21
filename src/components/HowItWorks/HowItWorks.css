@@ -1,17 +1,20 @@
 .how-it-works {
-  padding: 60px 20px;
+  background: transparent;
   text-align: center;
   color: #033258;
-  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
-  font-weight: bold;
+  gap: 20px 0;
 }
+
+
 .steps {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
+
 .step {
   display: flex;
   flex-direction: column;
@@ -20,19 +23,23 @@
   gap: 20px;
  align-items: center;
   justify-items: space-between;
-  background: #f5f5f5;
+  background: transparent;
   padding: 20px;
 }
 
 .step img {
   min-width: 50px;
-  min=height: 50px;
+  min-height: 50px;
+  height: auto;
+  width: auto;
   align-self: center;
+  object-fit: contain;
 }
 
 .step h3 {
   height: 60px;
   font-size: clamp(1.8rem, 2vw, 1.5rem);
+  margin: 0;
 }
 
 .step p {
@@ -40,7 +47,7 @@
   font-size: clamp(1.3rem, 1.5vw, 1.4rem);
   font-weight: 600;
   font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
-
+}
 
 .how-it-works__icon {
   background-color: transparent;
