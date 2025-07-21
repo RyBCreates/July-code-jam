@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { activities as hikingActivities } from "../../../utils/mockData/hikingData";
 import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
+// import { generateOptimizedRoute } from "../../../utils/api/route";
 
 const dataMap = {
   Hiking: hikingActivities,
@@ -163,6 +164,9 @@ function RouteBuilder() {
           <button
             className="route-builder__generate-route-btn"
             onClick={handleGenerateRoute}
+            // onClick={() => {
+            //   generateOptimizedRoute(locations);
+            // }}
           >
             Generate My Route
           </button>
