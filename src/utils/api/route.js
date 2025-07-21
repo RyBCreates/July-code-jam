@@ -1,12 +1,15 @@
 export const generateOptimizedRoute = async (locations) => {
   try {
-    const res = await fetch("/coloRUSH/api/route/optimize", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ locations }),
-    });
+    const res = await fetch(
+      "http://localhost:3003/coloRUSH/api/route/optimize",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ locations }),
+      }
+    );
 
     if (!res.ok) {
       const err = await res.json();

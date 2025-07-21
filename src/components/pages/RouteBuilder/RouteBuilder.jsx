@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { activities as hikingActivities } from "../../../utils/mockData/hikingData";
 import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
-// import { generateOptimizedRoute } from "../../../utils/api/route";
+import { generateOptimizedRoute } from "../../../utils/api/route";
 import trashIcon from "../../../assets/icons/trash-can-icon.svg";
-
 
 const dataMap = {
   Hiking: hikingActivities,
@@ -53,13 +52,36 @@ function RouteBuilder() {
   //   });
   // };
 
-  const handleGenerateRoute = () => {
+  // ORIGINAL GENERATE ROUTE FUNCTION
+  // const handleGenerateRoute = () => {
+  //   const allActivities = Object.values(dataMap).flat();
+  //   const selected = allActivities.filter((activity) =>
+  //     selectedActivityIds.includes(activity.id)
+  //   );
+
+  //   navigate("/optimal-route", { state: { selected } });
+  // };
+
+  const handleGenerateRoute = async () => {
     const allActivities = Object.values(dataMap).flat();
     const selected = allActivities.filter((activity) =>
       selectedActivityIds.includes(activity.id)
     );
 
-    navigate("/optimal-route", { state: { selected } });
+    const locations = selected.map((activity) => ({
+      lat: activity.location.lat,
+      lng: activity.location.lng,
+    }));
+
+    try {
+      console.log("Sending locations:", locations);
+
+      const optimizedRoute = await generateOptimizedRoute(locations);
+      navigate("/optimal-route", { state: { route: optimizedRoute } });
+    } catch (err) {
+      console.error("Failed to generate route:", err.message);
+      alert("There was an error generating your route. Please try again.");
+    }
   };
 
   return (
