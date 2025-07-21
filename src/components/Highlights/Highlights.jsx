@@ -6,8 +6,8 @@ import "./highlights.css";
 function Highlights() {
   return (
     <section className="highlights">
-      <h2 className="highlights__title">Activity Highlights</h2>
-      <div className="highlight-cards">
+      <h2 >Activity Highlights</h2>
+      <div className="highlights-cards">
         {highlightActivities.map((activity, index) => (
           <HighlightCard activity={activity} key={index} />
         ))}
@@ -18,3 +18,6 @@ function Highlights() {
 }
 
 export default Highlights;
+
+
+//className="highlights__title"
