@@ -50,16 +50,8 @@ function LoginModal({ activeModal, closeModal, handleSwitchModal }) {
             </label>
           </div>
           <div className="modal__auth-buttons">
-            <button className="modal__submit-button">Log In</button>
-            <button
-              className="modal__button_alternate"
-              type="button"
-              onClick={() => {
-                handleSwitchModal();
-              }}
-            >
-              or Sign Up
-            </button>
+              <button className="modal__submit-button" type="submit">Log In</button>
+              <button className="modal__button_alternate" type="button" onClick={handleSwitchModal}>or Sign Up</button>
           </div>
         </form>
       </div>
