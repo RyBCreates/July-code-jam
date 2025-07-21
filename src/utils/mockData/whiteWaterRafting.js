@@ -1,6 +1,7 @@
 const whiteWaterRaftingData = [
   {
     name: "Upper Colorado River",
+    id: 1019,
     trail: "Pumphouse to Radium",
     type: "White-Water Rafting",
     location: { lat: 39.9987, lng: -106.5222 },
@@ -10,10 +11,11 @@ const whiteWaterRaftingData = [
     gearNeeded: "Yes",
     camping: "Yes",
     image:
-      "https://whitewatercolorado.com/wp-content/uploads/2021/04/Upper-C-rafting.jpg",
+      "https://swiftmedia.s3.amazonaws.com/mountain.swiftcom.com/images/sites/9/2023/07/25112814/AVA-Rafting_Courtesy-Photo-2-1024x683.jpeg",
   },
   {
     name: "Arkansas River - Browns Canyon",
+    id: 1020,
     trail: "Browns Canyon Run",
     type: "White-Water Rafting",
     location: { lat: 38.8005, lng: -106.1217 },
@@ -23,10 +25,11 @@ const whiteWaterRaftingData = [
     gearNeeded: "Yes",
     camping: "Yes",
     image:
-      "https://whitewatercolorado.com/wp-content/uploads/2022/04/Browns-Canyon-Rafting.jpg",
+      "https://raftcoloradowhitewater.com/wp-content/uploads/2024/08/Family-Rafting-Trip-on-Browns-Canyon.jpeg",
   },
   {
     name: "Royal Gorge",
+    id: 1021,
     trail: "Royal Gorge Run",
     type: "White-Water Rafting",
     location: { lat: 38.4492, lng: -105.3144 },
@@ -36,7 +39,7 @@ const whiteWaterRaftingData = [
     gearNeeded: "Yes",
     camping: "No",
     image:
-      "https://www.americanadventure.com/wp-content/uploads/2022/01/Royal-Gorge-Whitewater-Rafting.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/4d/6e/58/caption.jpg?w=1200&h=-1&s=1",
   },
 ];
 
