@@ -16,7 +16,6 @@ const dataMap = {
 function RouteBuilder() {
   const navigate = useNavigate();
   const [selectedActivities, setSelectedActivities] = useState([]);
-  const [difficultySelections, setDifficultySelections] = useState({});
   const [selectedActivityIds, setSelectedActivityIds] = useState([]);
 
   const activityType = ["Mountain Biking", "Hiking", "White-Water Rafting"];
@@ -213,7 +212,7 @@ function RouteBuilder() {
                       </div>
                       <button
                         className="route-builder__remove-card-btn"
-                        onClick={() => handleAddToRoute(activity.id)} // reuse toggle function to remove
+                        onClick={() => handleAddToRoute(activity.id)}
                         aria-label="Remove from route"
                       >
                         <img src={trashIcon} alt="Remove" />

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "../Header/Header";
@@ -42,6 +42,27 @@ function App() {
   const closeModal = () => {
     setActiveModal("");
   };
+
+  // Close Modal with Escape or Click Outside
+  useEffect(() => {
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") closeModal();
+    };
+
+    const handleClickOutside = (e) => {
+      if (e.target.classList.contains("modal")) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscClose);
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscClose);
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="app">
