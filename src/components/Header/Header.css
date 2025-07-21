@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   background-color: #3b4d3e;
+  position: relative;
   z-index: 10;
 }
 
