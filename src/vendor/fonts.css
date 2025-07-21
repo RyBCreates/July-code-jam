@@ -16,6 +16,13 @@
 }
 
 @font-face {
+  font-family: "Roboto-Regular";
+  font-style: Normal;
+  font-weight: 400;
+  src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
+}
+
+@font-face {
   font-family: "Roboto-Bold";
   font-style: Bold;
   font-weight: (700);
@@ -24,7 +31,7 @@
 
 @font-face {
   font-family: "Roboto-SemiBold";
-  font-style: SemiBold;
+  font-style: normal;
   font-weight: (600);
   src: url(../vendor/fonts/Roboto-VariableFont_wdth\,wght.ttf) format(truetype);
 }

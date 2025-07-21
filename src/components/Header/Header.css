@@ -1,30 +1,24 @@
 .header {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   background-color: #3b4d3e;
   z-index: 10;
 }
 
 .header__container {
+  width: 90%; /* 5% margins on each side */
   max-width: 1440px;
-  margin: 0 auto;
   height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .header__logo-container {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-left: 20px;
-  margin-right: 20px;
+  gap: 15px;
+  text-decoration: none;
 }
 
 .header__logo {
@@ -48,25 +42,11 @@
 
 .header__user-block {
   display: flex;
-  margin-right: 30px;
-  gap: 20px;
-  font-family: "Roboto", sans-serif;
+  align-items: center;
+  gap: 1vw;
 }
 
-.header__register-button {
-  font-size: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.header__register-button:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-  color: white;
-}
-
+.header__register-button,
 .header__login-button {
   font-size: 18px;
   background: none;
@@ -75,6 +55,7 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.header__register-button:hover,
 .header__login-button:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
@@ -84,21 +65,21 @@
 .header__avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  cursor: pointer;
 }
 
 .header__avatar:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
-  .header {
+  .header__container {
     flex-direction: column;
     align-items: center;
     height: auto;
-    padding: 20px;
+    padding: 20px 5%;
   }
 
   .header__logo-container {
@@ -112,6 +93,7 @@
   .header__user-block {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .header__register-button,

@@ -2,15 +2,11 @@
   background: #fff;
   padding: 60px 20px;
   text-align: center;
-  color: black;
-  
-}
-
-.testimonials h2 {
-  margin: 0;
-  padding: 0 0 2%;
-  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -18,7 +14,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
   gap: 20px;
   
 }
@@ -42,6 +37,7 @@
   font-family: "Roboto", sans-serif;
   max-width: 400px;
   min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .testimonials-card img {
@@ -49,12 +45,13 @@
   height: 200px;
   border-radius: 15px;
   object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .testimonials-card p {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
+  font-size: clamp(1.2rem, 1.5vw, 1.2rem);
   margin: 10px 0 0;
-  font-weight: 400;
-  font-variant: regular;
+  font-weight: 500;
+  color: #033258;
 }
