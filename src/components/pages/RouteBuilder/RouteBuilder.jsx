@@ -53,36 +53,36 @@ function RouteBuilder() {
   // };
 
   // ORIGINAL GENERATE ROUTE FUNCTION
-  // const handleGenerateRoute = () => {
-  //   const allActivities = Object.values(dataMap).flat();
-  //   const selected = allActivities.filter((activity) =>
-  //     selectedActivityIds.includes(activity.id)
-  //   );
-
-  //   navigate("/optimal-route", { state: { selected } });
-  // };
-
-  const handleGenerateRoute = async () => {
+  const handleGenerateRoute = () => {
     const allActivities = Object.values(dataMap).flat();
     const selected = allActivities.filter((activity) =>
       selectedActivityIds.includes(activity.id)
     );
 
-    const locations = selected.map((activity) => ({
-      lat: activity.location.lat,
-      lng: activity.location.lng,
-    }));
-
-    try {
-      console.log("Sending locations:", locations);
-
-      const optimizedRoute = await generateOptimizedRoute(locations);
-      navigate("/optimal-route", { state: { route: optimizedRoute } });
-    } catch (err) {
-      console.error("Failed to generate route:", err.message);
-      alert("There was an error generating your route. Please try again.");
-    }
+    navigate("/optimal-route", { state: { selected } });
   };
+
+  // const handleGenerateRoute = async () => {
+  //   const allActivities = Object.values(dataMap).flat();
+  //   const selected = allActivities.filter((activity) =>
+  //     selectedActivityIds.includes(activity.id)
+  //   );
+
+  //   const locations = selected.map((activity) => ({
+  //     lat: activity.location.lat,
+  //     lng: activity.location.lng,
+  //   }));
+
+  //   try {
+  //     console.log("Sending locations:", locations);
+
+  //     const optimizedRoute = await generateOptimizedRoute(locations);
+  //     navigate("/optimal-route", { state: { route: optimizedRoute } });
+  //   } catch (err) {
+  //     console.error("Failed to generate route:", err.message);
+  //     alert("There was an error generating your route. Please try again.");
+  //   }
+  // };
 
   return (
     <div className="route-builder-wrapper">
