@@ -153,7 +153,7 @@
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -161,7 +161,7 @@
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 24px;
-  align-self: center;
+  text-align: center;
 }
 
 .route-builder__divider {
@@ -189,19 +189,6 @@
   gap: 52px;
 }
 
-/* .route-builder__add-to-route-btn {
-  font-size: 24px;
-  font-weight: bold;
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 40px auto 60px auto;
-  padding: 20px;
-} */
-
 .route-builder__add-to-route-btn {
   width: 100%;
   padding: 12px;
@@ -219,6 +206,54 @@
 
 .route-builder__add-to-route-btn:hover {
   background-color: #005fa3;
+}
+
+.route-builder__selected-preview {
+  background-color: #e6f2ff;
+  padding: 20px;
+  margin: 40px 0;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1106px;
+  color: black;
+}
+
+.route-builder__preview-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.route-builder__selected-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.route-builder__selected-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  background-color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.route-builder__selected-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.route-builder__selected-info p {
+  margin: 4px 0;
+  font-size: 16px;
+  text-align: center;
 }
 
 .route-builder__generate-route-btn {
