@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { activities as hikingActivities } from "../../../utils/mockData/hikingData";
 import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
-// import { generateOptimizedRoute } from "../../../utils/api/route";
+// import { generateOptimizedRoute } from "../../../utils/api/optimalRoute";
 import trashIcon from "../../../assets/icons/trash-can-icon.svg";
-
 
 const dataMap = {
   Hiking: hikingActivities,
