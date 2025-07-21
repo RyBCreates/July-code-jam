@@ -1,6 +1,7 @@
 const activities = [
   {
     name: "Red Rocks Amphitheatre",
+    id: 1001,
     trail: "Red Rocks Trail",
     type: "Hiking",
     location: { lat: 39.6654, lng: -105.2057 },
@@ -14,6 +15,7 @@ const activities = [
   },
   {
     name: "Garden of the Gods",
+    id: 1002,
     trail: "Garden Trail",
     type: "Hiking",
     location: { lat: 38.8784, lng: -104.8694 },
@@ -27,6 +29,7 @@ const activities = [
   },
   {
     name: "Chautauqua Park",
+    id: 1003,
     trail: "Chautauqua Trail",
     type: "Hiking",
     location: { lat: 40.0005, lng: -105.2817 },
@@ -40,6 +43,7 @@ const activities = [
   },
   {
     name: "Rocky Mountain NP",
+    id: 1004,
     trail: "Emerald Lake Trail",
     type: "Hiking",
     location: { lat: 40.3105, lng: -105.648 },
@@ -53,6 +57,7 @@ const activities = [
   },
   {
     name: "Rocky Mountain NP",
+    id: 1005,
     trail: "Sky Pond Trail",
     type: "Hiking",
     location: { lat: 40.3109, lng: -105.6627 },
@@ -66,6 +71,7 @@ const activities = [
   },
   {
     name: "Manitou Springs",
+    id: 1006,
     trail: "The Incline",
     type: "Hiking",
     location: { lat: 38.8577, lng: -104.9334 },
@@ -79,6 +85,7 @@ const activities = [
   },
   {
     name: "Flatirons",
+    id: 1007,
     trail: "Flatirons Loop Trail",
     type: "Hiking",
     location: { lat: 39.9999, lng: -105.2834 },
@@ -92,6 +99,7 @@ const activities = [
   },
   {
     name: "Boulder",
+    id: 1008,
     trail: "Bear Peak Trail",
     type: "Hiking",
     location: { lat: 39.9787, lng: -105.2954 },
@@ -105,6 +113,7 @@ const activities = [
   },
   {
     name: "Eldorado Canyon",
+    id: 1009,
     trail: "Rattlesnake Gulch Trail",
     type: "Hiking",
     location: { lat: 39.9332, lng: -105.2933 },
@@ -118,6 +127,7 @@ const activities = [
   },
   {
     name: "Glenwood Canyon",
+    id: 1010,
     trail: "Hanging Lake Trail",
     type: "Hiking",
     location: { lat: 39.5981, lng: -107.1917 },
@@ -126,9 +136,12 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "Yes",
     camping: "No",
+    image:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/8b/a9/81/hanging-lake.jpg?w=1200&h=-1&s=1",
   },
   {
     name: "Mount Evans Wilderness",
+    id: 1011,
     trail: "Mount Bierstadt Trail",
     type: "Hiking",
     location: { lat: 39.582, lng: -105.6438 },
@@ -137,9 +150,12 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "Yes",
     camping: "Yes",
+    image:
+      "https://trailrunproject.com/assets/photos/hike/7001090_smallMed_1554217633.jpg?cache=1751713890",
   },
   {
     name: "Maroon Bells",
+    id: 1012,
     trail: "Maroon Bells Scenic Loop Trail",
     type: "Hiking",
     location: { lat: 39.0986, lng: -106.9414 },
@@ -148,9 +164,12 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "No",
     camping: "Yes",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5f39599f0dd69335c3379b81/1674519907616-2I838PY2GL98GN85K6NH/unsplash-image--sUgs6NLFpE.jpg",
   },
   {
     name: "Rocky Mountain NP",
+    id: 1013,
     trail: "Bear Lake Loop",
     type: "Hiking",
     location: { lat: 40.31196, lng: -105.64581 },
@@ -159,9 +178,12 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "No",
     camping: "Yes",
+    image:
+      "https://www.rockymountainnationalpark.com/images/xl/20180910-19-08-17-lg.jpg",
   },
   {
     name: "Maroon Bells",
+    id: 1014,
     trail: "Maroon Lake Scenic Loop Trail",
     type: "Hiking",
     location: { lat: 39.09991, lng: -106.94192 },
@@ -170,9 +192,12 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "No",
     camping: "Yes",
+    image:
+      "https://photos.smugmug.com/United-States/Colorado/Maroon-Bells/i-ZJWbfrR/0/873666a9/XL/IMG_2449-XL.jpg",
   },
   {
     name: "Bangor City Forest",
+    id: 1015,
     trail: "East-West and Deer Trail Loop",
     type: "Hiking",
     location: { lat: 29.951722, lng: -95.237709 },
@@ -181,6 +206,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "Yes",
+    image:
+      "https://endlessmountains.wordpress.com/wp-content/uploads/2025/06/gm2.jpg",
   },
 ];
 

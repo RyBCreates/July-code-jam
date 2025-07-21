@@ -14,7 +14,7 @@
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: -10;
   opacity: 0.8;
   pointer-events: none;
   overflow: hidden;
@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
 }
 
 .route-builder__title {
@@ -51,6 +52,7 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
+  color: white;
 }
 
 .route-builder__filter-menu {
@@ -119,17 +121,24 @@
 }
 
 .route-builder__activity-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
   width: 1103px;
-  height: 599px;
+  height: auto;
+  min-height: 599px;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 32px;
   box-sizing: border-box;
+  margin-bottom: 100px;
 }
 
 .route-builder__activity-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   height: 314px;
   border-radius: 8px;
   object-fit: cover;
@@ -141,12 +150,37 @@
 .route-builder__activity-info {
   color: black;
   font-size: 24px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .route-builder__activity-name {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 24px;
+  align-self: center;
+}
+
+.route-builder__divider {
+  border: none;
+  border-top: 2px solid #033258;
+
+  width: 100%;
+  margin-bottom: auto;
+}
+
+.route-builder__activity_info-text {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.route-builder__activity_info-text-difficulty {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .route-builder__difficulty-options {
@@ -155,22 +189,36 @@
   gap: 52px;
 }
 
-.route-builder__difficulty-card {
-  width: 272px;
-  height: 314px;
-  border: 2px solid #999;
+/* .route-builder__add-to-route-btn {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #0077cc;
+  color: white;
+  border: none;
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  gap: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 40px auto 60px auto;
+  padding: 20px;
+} */
+
+.route-builder__add-to-route-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 12px;
+  position: absolute;
+  bottom: -80px;
 }
 
-.route-builder__difficulty-card input[type="radio"] {
-  transform: scale(1.5);
+.route-builder__add-to-route-btn:hover {
+  background-color: #005fa3;
 }
 
 .route-builder__generate-route-btn {

@@ -108,27 +108,25 @@ function RouteBuilder() {
                           <h3 className="route-builder__activity-name">
                             {activityCard.name}
                           </h3>
-                          <p>
+                          <hr className="route-builder__divider" />
+                          <p className="route-builder__activity_info-text-trail">
                             <strong>Trail:</strong> {activityCard.trail}
                           </p>
-                          <p>
-                            <strong>Difficulty:</strong>{" "}
+                          <p className="route-builder__activity_info-text-difficulty">
+                            {/* <strong>Difficulty:</strong>{" "} */}
                             {activityCard.difficulty}
                           </p>
-                          <label>
-                            <input
-                              type="checkbox"
-                              checked={
-                                difficultySelections[type]?.includes(level) ||
-                                false
-                              }
-                              onChange={() =>
-                                handleDifficultyChange(type, level)
-                              }
-                            />
-                            {level}
-                          </label>
                         </div>
+                        <button
+                          className="route-builder__add-to-route-btn"
+                          type="button"
+                          clicked={
+                            difficultySelections[type]?.includes(level) || false
+                          }
+                          onClick={() => handleDifficultyChange(type, level)}
+                        >
+                          Add to route
+                        </button>
                       </div>
                     ) : null;
                   })}
