@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { activities as hikingActivities } from "../../../utils/mockData/hikingData";
 import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
+import trashIcon from "../../../assets/icons/trash-can-icon.svg";
 
 const dataMap = {
   Hiking: hikingActivities,
@@ -118,6 +119,13 @@ function RouteBuilder() {
                           <p className="route-builder__activity_info-text-trail">
                             <strong>Trail:</strong> {activityCard.trail}
                           </p>
+                          <p className="route-builder__activity_info-gear-needed">
+                            <strong>Gear Needed:</strong>{" "}
+                            {activityCard.gearNeeded}
+                          </p>
+                          <p className="route-builder__activity_info-camping">
+                            <strong>Camping:</strong> {activityCard.camping}
+                          </p>
                           <p className="route-builder__activity_info-text-difficulty">
                             {/* <strong>Difficulty:</strong>{" "} */}
                             {activityCard.difficulty}
@@ -172,7 +180,20 @@ function RouteBuilder() {
                         <p className="route-builder__selected-difficulty">
                           <strong>Difficulty:</strong> {activity.difficulty}
                         </p>
+                        <p className="route-builder__selected-gear-needed">
+                          <strong>Gear Needed:</strong> {activity.gearNeeded}
+                        </p>
+                        <p className="route-builder__selected-camping">
+                          <strong>Camping:</strong> {activity.camping}
+                        </p>
                       </div>
+                      <button
+                        className="route-builder__remove-card-btn"
+                        onClick={() => handleAddToRoute(activity.id)} // reuse toggle function to remove
+                        aria-label="Remove from route"
+                      >
+                        <img src={trashIcon} alt="Remove" />
+                      </button>
                     </div>
                   ))}
               </div>
