@@ -54,7 +54,7 @@
   margin: 0;
   font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-size: clamp(1.5rem, 1.2vw, 2rem);
+  font-size: clamp(1.5rem, 1.2vw, 1.5rem);
 }
 
 .highlight-card__difficulty {
