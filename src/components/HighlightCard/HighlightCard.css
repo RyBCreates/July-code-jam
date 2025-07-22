@@ -63,3 +63,9 @@
   font-size: clamp(1.2rem, 1.2vw, 1.5rem);
   color: #555;
 }
+
+@media (max-width: 750px) {
+  .highlight-card {
+    width: 290px;
+  }
+}
