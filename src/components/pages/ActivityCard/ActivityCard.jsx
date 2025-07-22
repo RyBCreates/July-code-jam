@@ -14,7 +14,7 @@ function ActivityCard({
         className="activity-card__image"
       />
       <div className="activity-card__details">
-        <h3>{activity.name}</h3>
+        <h3 className="activity-card__details-title">{activity.name}</h3>
         <p>
           <strong>Sport:</strong> {activity.type}
         </p>
