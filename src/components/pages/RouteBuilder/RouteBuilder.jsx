@@ -54,35 +54,46 @@ function RouteBuilder() {
 
   // ORIGINAL GENERATE ROUTE FUNCTION
 
-  const handleGenerateRoute = () => {
-    const allActivities = Object.values(dataMap).flat();
-    const selected = allActivities.filter((activity) =>
-      selectedActivityIds.includes(activity.id)
-    );
-
-    navigate("/optimal-route", { state: { selected } });
-  };
-
-  // const handleGenerateRoute = async () => {
-  //   if (selectedActivityIds.length < 2) {
-  //     alert("Please select at least 2 activities to generate a route.");
-  //     return;
-  //   }
-
+  // const handleGenerateRoute = () => {
   //   const allActivities = Object.values(dataMap).flat();
   //   const selected = allActivities.filter((activity) =>
   //     selectedActivityIds.includes(activity.id)
   //   );
 
-  //   try {
-  //     console.log("This is the selected:", selected);
-  //     const optimizedRoute = await generateOptimizedRoute(selected);
-  //     navigate("/optimal-route", { state: { optimizedRoute } });
-  //   } catch (error) {
-  //     console.error("Error generating route:", error);
-  //     alert("There was a problem generating your route. Please try again.");
-  //   }
+  //   navigate("/optimal-route", { state: { selected } });
   // };
+
+  const handleGenerateRoute = async () => {
+    if (selectedActivityIds.length < 2) {
+      alert("Please select at least 2 activities to generate a route.");
+      return;
+    }
+
+    const allActivities = Object.values(dataMap).flat();
+    const selected = allActivities.filter((activity) =>
+      selectedActivityIds.includes(activity.id)
+    );
+
+    try {
+      const normalizedSelected = selected.map((activity) => ({
+        ...activity,
+        latitude: activity.location?.lat ?? activity.lat,
+        longitude: activity.location?.lng ?? activity.lng,
+      }));
+      const response = await generateOptimizedRoute(normalizedSelected);
+      console.log("API response:", response);
+
+      navigate("/optimal-route", {
+        state: {
+          optimizedRoute: response.optimizedRoute,
+          totalDistanceKm: response.totalDistanceKm,
+        },
+      });
+    } catch (error) {
+      console.error("Error generating route:", error);
+      alert("There was a problem generating your route. Please try again.");
+    }
+  };
 
   return (
     <div className="route-builder-wrapper">
@@ -196,9 +207,6 @@ function RouteBuilder() {
           <button
             className="route-builder__generate-route-btn"
             onClick={handleGenerateRoute}
-            // onClick={() => {
-            //   generateOptimizedRoute(locations);
-            // }}
           >
             Generate My Route
           </button>
