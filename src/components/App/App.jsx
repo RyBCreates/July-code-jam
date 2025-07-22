@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { register, login, checkToken } from "../../utils/api/auth";
+import { register, login, checkToken, updateUser } from "../../utils/api/auth";
 
 import Header from "../Header/Header";
 import Home from "../pages/Home/Home";
@@ -16,6 +16,7 @@ import Footer from "../Footer/Footer";
 
 import LoginModal from "../modals/LoginModal/LoginModal";
 import RegisterModal from "../modals/RegisterModal/RegisterModal";
+import EditProfileModal from "../modals/EditProfileModal/EditProfileModal";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -43,6 +44,11 @@ function App() {
     } else {
       setActiveModal("login-modal");
     }
+  };
+
+  // Open Edit Profile Modal
+  const handleEditProfileClick = () => {
+    setActiveModal("edit-profile-modal");
   };
 
   // Close Modal
@@ -137,6 +143,7 @@ function App() {
         handleLogin,
         handleRegister,
         handleLogout,
+        updateUser,
       }}
     >
       <div className="app">
@@ -155,6 +162,7 @@ function App() {
                   element={UserProfile}
                   isLoggedIn={isLoggedIn}
                   handleLogout={handleLogout}
+                  handleEditProfileClick={handleEditProfileClick}
                 />
               }
             />
@@ -177,6 +185,7 @@ function App() {
           handleSwitchModal={handleSwitchModal}
           onRegister={handleRegister}
         />
+        <EditProfileModal activeModal={activeModal} closeModal={closeModal} />
       </div>
     </CurrentUserContext.Provider>
   );
