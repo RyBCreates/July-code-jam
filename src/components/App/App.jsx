@@ -135,6 +135,17 @@ function App() {
     setIsLoggedIn(false);
     setCurrentUser(null);
   };
+
+  const handleUpdateUser = ({ username, avatar }) => {
+    updateUser({ username, avatar })
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser);
+        closeModal();
+      })
+      .catch((error) => {
+        console.error("Update error:", error);
+      });
+  };
   return (
     <CurrentUserContext.Provider
       value={{
@@ -143,7 +154,7 @@ function App() {
         handleLogin,
         handleRegister,
         handleLogout,
-        updateUser,
+        updateUser: handleUpdateUser,
       }}
     >
       <div className="app">
