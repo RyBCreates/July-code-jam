@@ -2,6 +2,7 @@
   position: relative;
   z-index: 0;
   isolation: isolate;
+  
 }
 
 .route-background {
@@ -10,7 +11,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/src/assets/images/bg.jpg");
+  
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
@@ -30,29 +31,33 @@
   align-items: center;
   color: white;
   min-height: 100vh;
+  
 }
 
 .route-builder__content {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: white;
   padding: 20px;
   border-radius: 16px;
   width: 100%;
   max-width: 1200px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  margin: 0 auto 60px auto;
-  margin: 60px auto;
+  margin: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
+  padding: 2vw 5vw;
+  max-width: 1440px;
+  
 }
 
 .route-builder__title {
+  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
   font-size: 64px;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
-  color: white;
+  
 }
 
 .route-builder__filter-menu {
@@ -67,6 +72,7 @@
   border-radius: 8px;
   margin-left: 21px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .route-builder__filter-menu-label {
@@ -75,11 +81,14 @@
   font-weight: bold;
   display: block;
   color: white;
+  flex-wrap: wrap;
 }
 
 .route-builder__filter-options {
   display: flex;
   gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .route-builder__filter-option {
@@ -90,12 +99,11 @@
   cursor: pointer;
   border-radius: 8px;
   padding: 8px 12px;
+  flex-wrap: wrap;
 }
 
 .route-builder__difficulty-group {
-  margin-top: 24px;
-  margin-left: 20px;
-  margin-bottom: 24px;
+  align-self: center;
   padding: 24px;
   background-color: #f2faff;
   border: 1px solid #cce4ff;
@@ -114,9 +122,13 @@
 
 .route-builder__difficulty-options {
   display: flex;
-  justify-content: space-between;
-  gap: 52px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;    
+  gap: 24px;           
 }
+
+
 
 .route-builder__add-to-route-btn {
   width: 100%;
@@ -145,6 +157,9 @@
   width: 100%;
   max-width: 1106px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .route-builder__preview-title {
@@ -157,41 +172,45 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .route-builder__selected-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 220px;
+  align-self: center;
+  width: 260px;
+  height: 460px;
   background-color: white;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
+
 
 .route-builder__selected-image {
   width: 100%;
   height: 140px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 10px;
   margin-bottom: 12px;
 }
 
 .route-builder__selected-info p {
   margin: 4px 0;
   font-size: 16px;
-  text-align: center;
+  text-align: left;
 }
 
 .route-builder__remove-card-btn {
   background: rgba(255, 255, 255, 1);
   border: solid 1px #ccc;
-  /* border-radius: 12px; */
+  border-radius: 0 10px;
   cursor: pointer;
-  /* padding: 4px; */
   position: absolute;
   top: 12px;
   right: 12px;
@@ -200,6 +219,10 @@
 .route-builder__remove-card-btn img {
   width: 20px;
   height: 20px;
+}
+
+.route-builder__remove-card-btn:hover {
+  background-color: #f0f0f0;
 }
 
 .route-builder__generate-route-btn {
