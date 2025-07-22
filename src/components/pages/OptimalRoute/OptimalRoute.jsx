@@ -124,8 +124,15 @@ function OptimalRoute() {
                 "savedRoutes",
                 JSON.stringify(updatedRoutes)
               );
-              //this line ensures immediate UI update:
-              setSavedRoutes(updatedRoutes);
+
+              setSavedRoutes(updatedRoutes); //this line ensures immediate UI update:
+              //scroll down to the Save Your Route section of the page
+              setTimeout(() => {
+                const section = document.getElementById("saved-routes");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }, 100); // slight delay to ensure rendering finishes
             }}
           >
             Save Your Route
@@ -142,7 +149,7 @@ function OptimalRoute() {
           ))}
         </div>
 
-        <div className="saved-routes">
+        <div className="saved-routes" id="saved-routes">
           <h2 className="saved-routes__title">Your Saved Routes</h2>
           <div className="saved-routes__list">
             {savedRoutes.map((route) => (
