@@ -15,10 +15,7 @@
   max-width: 850px;
   width: 100%;
   box-sizing: border-box;
-  overflow-y: auto;
-  max-height: 90vh;
 }
-
 
 .contact__title {
   margin-bottom: 20px;
