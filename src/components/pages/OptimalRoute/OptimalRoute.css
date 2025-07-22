@@ -7,7 +7,7 @@
 .optimal-route__title {
   font-size: 61px;
   margin: 50px 100px 40px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .activity-cards {
@@ -45,7 +45,7 @@
 }
 
 .route-controls {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
@@ -88,4 +88,67 @@
 
 .btn-save:hover {
   background-color: #0097a7;
+}
+
+.saved-routes__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1006pxpx;
+  list-style-type: decimal;
+}
+
+.saved-routes__activity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.saved-routes__map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 100px;
+}
+
+.saved-routes__card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  background: #fff;
+  width: 350px;
+  border-radius: 8px;
+}
+
+.saved-routes__map {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.saved-routes__delete-btn {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  top: 507px;
+  right: -3px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  padding: 10px;
+}
+
+.saved-routes__delete-btn__img {
+  object-fit: contain;
+  width: 30px;
+  height: 30px;
+}
+
+.saved-routes__delete-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
