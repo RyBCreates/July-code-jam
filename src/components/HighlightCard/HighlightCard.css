@@ -21,7 +21,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 .highlight-card__content {
   display: flex;
   flex-direction: column;
@@ -38,9 +37,8 @@
   min-height: 2em;
   display: flex;
   align-items: center;
-  line-height: 2.5vmin;
+  line-height: 1.1;
 }
-
 
 .highlight-card__divider {
   border: none;
