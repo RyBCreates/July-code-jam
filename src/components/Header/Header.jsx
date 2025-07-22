@@ -15,10 +15,10 @@ function Header({ handleLoginClick, handleRegisterClick }) {
           <h1 className="header__title">ColoRUSH</h1>
         </Link>
         {isLoggedIn ? (
-          <div className="header__user-block">
+          <Link className="header__user-block" to="/user">
             <p className="header__username">{currentUser?.username}</p>
             <img className="header__avatar" src={avatar} alt="Avatar" />
-          </div>
+          </Link>
         ) : (
           <div className="header__user-block">
             <button
