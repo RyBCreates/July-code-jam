@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { activities as hikingActivities } from "../../../utils/mockData/hikingData";
 import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
+import { generateOptimizedRoute } from "../../../utils/api/optimalRoute";
+import trashIcon from "../../../assets/icons/trash-can-icon.svg";
+import ActivityCard from "../ActivityCard/ActivityCard";
 
 const dataMap = {
   Hiking: hikingActivities,
@@ -14,7 +17,7 @@ const dataMap = {
 function RouteBuilder() {
   const navigate = useNavigate();
   const [selectedActivities, setSelectedActivities] = useState([]);
-  const [difficultySelections, setDifficultySelections] = useState({});
+  const [selectedActivityIds, setSelectedActivityIds] = useState([]);
 
   const activityType = ["Mountain Biking", "Hiking", "White-Water Rafting"];
   const handleActivityToggle = (activity) => {
@@ -25,33 +28,61 @@ function RouteBuilder() {
     );
   };
 
-  const handleDifficultyChange = (activity, level) => {
-    setDifficultySelections((prev) => {
-      const currentLevels = prev[activity] || [];
-      const isSelected = currentLevels.includes(level);
-
-      const updatedLevels = isSelected
-        ? currentLevels.filter((selectedLevel) => selectedLevel !== level) // remove if already selected
-        : [...currentLevels, level]; // add if not selected
-
-      return {
-        ...prev,
-        [activity]: updatedLevels,
-      };
-    });
+  const handleAddToRoute = (activityId) => {
+    setSelectedActivityIds((prev) =>
+      prev.includes(activityId)
+        ? prev.filter((id) => id !== activityId)
+        : [...prev, activityId]
+    );
   };
 
+  // const handleDifficultyChange = (activity, level) => {
+  //   setDifficultySelections((prev) => {
+  //     const currentLevels = prev[activity] || [];
+  //     const isSelected = currentLevels.includes(level);
+
+  //     const updatedLevels = isSelected
+  //       ? currentLevels.filter((selectedLevel) => selectedLevel !== level) // remove if already selected
+  //       : [...currentLevels, level]; // add if not selected
+
+  //     return {
+  //       ...prev,
+  //       [activity]: updatedLevels,
+  //     };
+  //   });
+  // };
+
+  // ORIGINAL GENERATE ROUTE FUNCTION
+
   const handleGenerateRoute = () => {
-    const selected = selectedActivities.flatMap((type) => {
-      const dataSet = dataMap[type] || [];
-      const selectedDifficulties = difficultySelections[type] || [];
-      return dataSet.filter((activity) =>
-        selectedDifficulties.includes(activity.difficulty)
-      );
-    });
+    const allActivities = Object.values(dataMap).flat();
+    const selected = allActivities.filter((activity) =>
+      selectedActivityIds.includes(activity.id)
+    );
 
     navigate("/optimal-route", { state: { selected } });
   };
+
+  // const handleGenerateRoute = async () => {
+  //   if (selectedActivityIds.length < 2) {
+  //     alert("Please select at least 2 activities to generate a route.");
+  //     return;
+  //   }
+
+  //   const allActivities = Object.values(dataMap).flat();
+  //   const selected = allActivities.filter((activity) =>
+  //     selectedActivityIds.includes(activity.id)
+  //   );
+
+  //   try {
+  //     console.log("This is the selected:", selected);
+  //     const optimizedRoute = await generateOptimizedRoute(selected);
+  //     navigate("/optimal-route", { state: { optimizedRoute } });
+  //   } catch (error) {
+  //     console.error("Error generating route:", error);
+  //     alert("There was a problem generating your route. Please try again.");
+  //   }
+  // };
 
   return (
     <div className="route-builder-wrapper">
@@ -95,41 +126,13 @@ function RouteBuilder() {
                     );
 
                     return activityCard ? (
-                      <div
+                      <ActivityCard
                         key={`${type}-${level}`}
-                        className="route-builder__activity-card"
-                      >
-                        <img
-                          src={activityCard.image}
-                          alt={activityCard.name}
-                          className="route-builder__activity-image"
-                        />
-                        <div className="route-builder__activity-info">
-                          <h3 className="route-builder__activity-name">
-                            {activityCard.name}
-                          </h3>
-                          <p>
-                            <strong>Trail:</strong> {activityCard.trail}
-                          </p>
-                          <p>
-                            <strong>Difficulty:</strong>{" "}
-                            {activityCard.difficulty}
-                          </p>
-                          <label>
-                            <input
-                              type="checkbox"
-                              checked={
-                                difficultySelections[type]?.includes(level) ||
-                                false
-                              }
-                              onChange={() =>
-                                handleDifficultyChange(type, level)
-                              }
-                            />
-                            {level}
-                          </label>
-                        </div>
-                      </div>
+                        activity={activityCard}
+                        onButtonClick={handleAddToRoute}
+                        buttonText="Add to Route"
+                        showButton={true}
+                      />
                     ) : null;
                   })}
                 </div>
@@ -137,32 +140,65 @@ function RouteBuilder() {
             );
           })}
 
-          {/* <div className="route-builder__activity-cards">
-            {filteredActivities.map((activity) => (
-              <div key={activity.name} className="route-builder__activity-card">
-                <img
-                  src={activity.image}
-                  alt={activity.name}
-                  className="route-builder__activity-image"
-                />
-                <div className="route-builder__activity-info">
-                  <h3 className="route-builder__activity-name">
-                    {activity.name}
-                  </h3>
-                  <p>
-                    <strong>Trail:</strong> {activity.trail}
-                  </p>
-                  <p>
-                    <strong>Difficulty:</strong> {activity.difficulty}
-                  </p>
-                </div>
+          {selectedActivityIds.length > 0 && (
+            <div className="route-builder__selected-preview">
+              <h3 className="route-builder__preview-title">
+                Your Route Preview
+              </h3>
+              <div className="route-builder__selected-cards">
+                {Object.values(dataMap)
+                  .flat()
+                  .filter((activity) =>
+                    selectedActivityIds.includes(activity.id)
+                  )
+                  .map((activity) => (
+                    <div
+                      key={activity.id}
+                      className="route-builder__selected-card"
+                    >
+                      <img
+                        src={activity.image}
+                        alt={activity.name}
+                        className="route-builder__selected-image"
+                      />
+                      <div className="route-builder__selected-info">
+                        <p className="route-builder__selected-type">
+                          <strong>{activity.type}</strong>
+                        </p>
+                        <p className="route-builder__selected-name">
+                          {activity.name}
+                        </p>
+                        <p className="route-builder__selected-trail">
+                          <strong>Trail:</strong> {activity.trail}
+                        </p>
+                        <p className="route-builder__selected-difficulty">
+                          <strong>Difficulty:</strong> {activity.difficulty}
+                        </p>
+                        <p className="route-builder__selected-gear-needed">
+                          <strong>Gear Needed:</strong> {activity.gearNeeded}
+                        </p>
+                        <p className="route-builder__selected-camping">
+                          <strong>Camping:</strong> {activity.camping}
+                        </p>
+                      </div>
+                      <button
+                        className="route-builder__remove-card-btn"
+                        onClick={() => handleAddToRoute(activity.id)}
+                        aria-label="Remove from route"
+                      >
+                        <img src={trashIcon} alt="Remove" />
+                      </button>
+                    </div>
+                  ))}
               </div>
-            ))}
-          </div> */}
-
+            </div>
+          )}
           <button
             className="route-builder__generate-route-btn"
             onClick={handleGenerateRoute}
+            // onClick={() => {
+            //   generateOptimizedRoute(locations);
+            // }}
           >
             Generate My Route
           </button>

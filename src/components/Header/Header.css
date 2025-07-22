@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   background-color: #3b4d3e;
+  position: relative;
   z-index: 10;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .header__logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: transform 0.3s ease;
 }
 
@@ -70,6 +71,9 @@
 
 .header__avatar:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 

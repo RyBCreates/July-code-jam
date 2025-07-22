@@ -1,5 +1,6 @@
 import "./OptimalRoute.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import ActivityCard from "../ActivityCard/ActivityCard";
 
 function OptimalRoute() {
   const { state } = useLocation(); // get the passed state from navigate()
@@ -67,7 +68,24 @@ function OptimalRoute() {
           <button
             className="btn-download"
             onClick={() => {
-              // Replace with actual offline download logic
+              const origin = selectedActivities[0]?.location;
+              const destination =
+                selectedActivities[selectedActivities.length - 1]?.location;
+
+              const waypoints = selectedActivities
+                .slice(1, selectedActivities.length - 1)
+                .map((act) => `${act.location.lat},${act.location.lng}`)
+                .join("|");
+
+              const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${
+                origin.lat
+              },${origin.lng}&destination=${destination.lat},${
+                destination.lng
+              }${
+                waypoints ? `&waypoints=${waypoints}` : ""
+              }&travelmode=driving`;
+
+              window.open(mapsUrl, "_blank");
             }}
           >
             Download map for use offline
@@ -80,32 +98,17 @@ function OptimalRoute() {
               alert("Route saved!");
             }}
           >
-            Save
+            Save Your Route
           </button>
         </div>
 
         <div className="activity-cards">
           {selectedActivities.map((activity, index) => (
-            <div className="activity-card" key={`${activity.name}-${index}`}>
-              <img
-                src={activity.image}
-                alt={activity.name}
-                className="activity-card__image"
-              />
-              <div className="activity-card__details">
-                <h3>{activity.name}</h3>
-                <p>
-                  <strong>Sport:</strong> {activity.type}
-                </p>
-                <p>
-                  <strong>Coordinates:</strong> {activity.location.lat},{" "}
-                  {activity.location.lng}
-                </p>
-                <p>
-                  <strong>Difficulty:</strong> {activity.difficulty}
-                </p>
-              </div>
-            </div>
+            <ActivityCard
+              key={`${activity.name}-${index}`}
+              activity={activity}
+              showButton={false} // or true, depending on your design
+            />
           ))}
         </div>
       </main>

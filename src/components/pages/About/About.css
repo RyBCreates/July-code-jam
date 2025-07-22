@@ -1,0 +1,30 @@
+.about__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px 75px;
+  text-align: left;
+}
+
+.about__description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 30px 75px;
+  text-align: left;
+}
+
+.about__sub-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 40px 75px;
+  text-align: left;
+}
+
+.about__developers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+  justify-items: center;
+}
