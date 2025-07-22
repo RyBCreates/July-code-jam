@@ -1,4 +1,4 @@
-import closeButton from "../../../assets/icons/close-button.svg";
+import closeButton from "../../../assets/icons/close-btn.svg";
 
 import "../Modals.css";
 import "./RegisterModal.css";
@@ -78,7 +78,7 @@ function RegisterModal({ activeModal, closeModal, handleSwitchModal }) {
                 handleSwitchModal();
               }}
             >
-              or Log In
+              Log In
             </button>
           </div>
         </form>
