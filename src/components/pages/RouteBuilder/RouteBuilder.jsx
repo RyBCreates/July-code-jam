@@ -36,6 +36,24 @@ function RouteBuilder() {
     );
   };
 
+  // const handleDifficultyChange = (activity, level) => {
+  //   setDifficultySelections((prev) => {
+  //     const currentLevels = prev[activity] || [];
+  //     const isSelected = currentLevels.includes(level);
+
+  //     const updatedLevels = isSelected
+  //       ? currentLevels.filter((selectedLevel) => selectedLevel !== level) // remove if already selected
+  //       : [...currentLevels, level]; // add if not selected
+
+  //     return {
+  //       ...prev,
+  //       [activity]: updatedLevels,
+  //     };
+  //   });
+  // };
+
+  // ORIGINAL GENERATE ROUTE FUNCTION
+
   const handleGenerateRoute = () => {
     const allActivities = Object.values(dataMap).flat();
     const selected = allActivities.filter((activity) =>
