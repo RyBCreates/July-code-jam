@@ -1,5 +1,6 @@
 import "./OptimalRoute.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import ActivityCard from "../ActivityCard/ActivityCard";
 
 function OptimalRoute() {
   const { state } = useLocation(); // get the passed state from navigate()
@@ -103,36 +104,11 @@ function OptimalRoute() {
 
         <div className="activity-cards">
           {selectedActivities.map((activity, index) => (
-            <div className="activity-card" key={`${activity.name}-${index}`}>
-              <img
-                src={activity.image}
-                alt={activity.name}
-                className="activity-card__image"
-              />
-              <div className="activity-card__details">
-                <h3>{activity.name}</h3>
-                <p>
-                  <strong>Sport:</strong> {activity.type}
-                </p>
-                <p>
-                  <strong>Coordinates:</strong> {activity.location.lat},{" "}
-                  {activity.location.lng}
-                </p>
-                <p className="route-builder__activity_info-text-trail">
-                  <strong>Trail:</strong> {activity.trail}
-                </p>
-                <p className="route-builder__activity_info-gear-needed">
-                  <strong>Gear Needed:</strong> {activity.gearNeeded}
-                </p>
-                <p className="route-builder__activity_info-camping">
-                  <strong>Camping:</strong> {activity.camping}
-                </p>
-                <p className="route-builder__activity_info-text-difficulty">
-                  {/* <strong>Difficulty:</strong>{" "} */}
-                  {activity.difficulty}
-                </p>
-              </div>
-            </div>
+            <ActivityCard
+              key={`${activity.name}-${index}`}
+              activity={activity}
+              showButton={false} // or true, depending on your design
+            />
           ))}
         </div>
       </main>
