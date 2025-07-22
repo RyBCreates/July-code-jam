@@ -12,7 +12,9 @@ function OptimalRoute() {
 
   const { state } = useLocation(); // get the passed state from navigate()
   const navigate = useNavigate();
-  const selectedActivities = state?.selected || []; // fallback to empty array if none
+  const selectedActivities = state?.optimizedRoute || []; // fallback to empty array if none
+  const totalDistance = state?.totalDistanceKm || 0;
+
   const API_KEY = "AIzaSyDkPE0UYfDibIgUqLca2vpcQI1IZKOoiHE";
 
   if (selectedActivities.length < 2) {
@@ -25,6 +27,13 @@ function OptimalRoute() {
           Not enough activities selected to generate a route. Please go back and
           choose at least 2.
         </p>
+        <button
+          className="optimal-route__back-button"
+          type="button"
+          onClick={() => navigate("/create-your-adventure")}
+        >
+          Try Again
+        </button>
       </div>
     );
   }
@@ -57,6 +66,17 @@ function OptimalRoute() {
     localStorage.setItem("savedRoutes", JSON.stringify(updated));
   };
 
+  console.log("Received optimizedRoute:", selectedActivities);
+
+  const normalizedActivities = selectedActivities.map((act) => ({
+    ...act,
+    name: act.trail_name || act.name,
+    location: {
+      lat: parseFloat(act.latitude ?? act.location?.lat),
+      lng: parseFloat(act.longitude ?? act.location?.lng),
+    },
+  }));
+
   return (
     <div>
       <main className="optimal-route">
@@ -88,9 +108,13 @@ function OptimalRoute() {
           <button
             className="btn-download"
             onClick={() => {
-              const origin = selectedActivities[0]?.location;
-              const destination =
-                selectedActivities[selectedActivities.length - 1]?.location;
+              const origin = normalizedActivities[0]?.location;
+              const destination = normalizedActivities.at(-1)?.location;
+
+              const waypoints = normalizedActivities
+                .slice(1, -1)
+                .map((act) => `${act.location.lat},${act.location.lng}`)
+                .join("|");
 
               const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${
                 origin.lat

@@ -1,3 +1,5 @@
+import { baseUrl } from "../../utils/constants";
+
 export const generateOptimizedRoute = async (locations) => {
   try {
     const res = await fetch(`${baseUrl}/route/optimize`, {

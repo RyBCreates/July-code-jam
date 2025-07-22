@@ -77,6 +77,7 @@ function App() {
     };
   }, []);
 
+  // Check for jwt token
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
@@ -92,6 +93,7 @@ function App() {
     }
   }, []);
 
+  // Register a user
   const handleRegister = ({ email, password, username, avatar }) => {
     register({ email, password, username, avatar })
       .then(() => {
@@ -113,6 +115,7 @@ function App() {
       });
   };
 
+  // Login a User
   const handleLogin = ({ email, password }) => {
     return login({ email, password })
       .then((data) => {
@@ -130,12 +133,15 @@ function App() {
         console.error("Login error:", error);
       });
   };
+
+  // Logout a user
   const handleLogout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
   };
 
+  // update user info
   const handleUpdateUser = ({ username, avatar }) => {
     updateUser({ username, avatar })
       .then((updatedUser) => {
