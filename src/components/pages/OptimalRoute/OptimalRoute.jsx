@@ -16,7 +16,6 @@ function OptimalRoute() {
   const selectedActivities = state?.optimizedRoute || []; // fallback to empty array if none
   const totalDistance = state?.totalDistanceKm || 0;
 
-  const selectedActivities = state?.selected || []; // fallback to empty array if none
   const [mapModalUrl, setMapModalUrl] = useState(null);
   const API_KEY = "AIzaSyDkPE0UYfDibIgUqLca2vpcQI1IZKOoiHE";
 
