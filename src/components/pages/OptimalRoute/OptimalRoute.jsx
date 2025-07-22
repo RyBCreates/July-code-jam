@@ -2,10 +2,14 @@ import "./OptimalRoute.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ActivityCard from "../ActivityCard/ActivityCard";
-import generateStaticMapUrl from "../../../utils/generateStaticMapUrl";
 import trashIcon from "../../../assets/icons/trash-can-icon.svg";
 
 function OptimalRoute() {
+  //scroll to the top of the page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { state } = useLocation(); // get the passed state from navigate()
   const navigate = useNavigate();
   const selectedActivities = state?.selected || []; // fallback to empty array if none
