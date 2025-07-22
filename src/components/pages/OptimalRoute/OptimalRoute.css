@@ -50,7 +50,7 @@
   font-weight: bold;
 }
 .btn-reset {
-  background-color: #0077cc;
+  background-color: #0566d5;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -59,7 +59,7 @@
   margin: 0 40px 40px;
 }
 .btn-download {
-  background-color: #0077cc;
+  background-color: #0566d5;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -69,7 +69,7 @@
 }
 
 .btn-save {
-  background-color: #0077cc;
+  background-color: #0566d5;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -79,19 +79,13 @@
 }
 
 .btn-download:hover {
-  background-color: #005fa3;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0097a7;
 }
 
 .btn-reset:hover {
-  background-color: #005fa3;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0097a7;
 }
 
 .btn-save:hover {
-  background-color: #005fa3;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0097a7;
 }

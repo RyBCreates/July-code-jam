@@ -6,6 +6,7 @@ import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
 import { generateOptimizedRoute } from "../../../utils/api/optimalRoute";
 import trashIcon from "../../../assets/icons/trash-can-icon.svg";
+import ActivityCard from "../ActivityCard/ActivityCard";
 
 const dataMap = {
   Hiking: hikingActivities,
@@ -107,43 +108,13 @@ function RouteBuilder() {
                     );
 
                     return activityCard ? (
-                      <div
+                      <ActivityCard
                         key={`${type}-${level}`}
-                        className="route-builder__activity-card"
-                      >
-                        <img
-                          src={activityCard.image}
-                          alt={activityCard.name}
-                          className="route-builder__activity-image"
-                        />
-                        <div className="route-builder__activity-info">
-                          <h3 className="route-builder__activity-name">
-                            {activityCard.name}
-                          </h3>
-                          <hr className="route-builder__divider" />
-                          <p className="route-builder__activity_info-text-trail">
-                            <strong>Trail:</strong> {activityCard.trail}
-                          </p>
-                          <p className="route-builder__activity_info-gear-needed">
-                            <strong>Gear Needed:</strong>{" "}
-                            {activityCard.gearNeeded}
-                          </p>
-                          <p className="route-builder__activity_info-camping">
-                            <strong>Camping:</strong> {activityCard.camping}
-                          </p>
-                          <p className="route-builder__activity_info-text-difficulty">
-                            {/* <strong>Difficulty:</strong>{" "} */}
-                            {activityCard.difficulty}
-                          </p>
-                        </div>
-                        <button
-                          className="route-builder__add-to-route-btn"
-                          type="button"
-                          onClick={() => handleAddToRoute(activityCard.id)}
-                        >
-                          Add to route
-                        </button>
-                      </div>
+                        activity={activityCard}
+                        onButtonClick={handleAddToRoute}
+                        buttonText="Add to Route"
+                        showButton={true}
+                      />
                     ) : null;
                   })}
                 </div>
