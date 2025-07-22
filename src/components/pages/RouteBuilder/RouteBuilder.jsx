@@ -52,6 +52,7 @@ function RouteBuilder() {
   // };
 
   // ORIGINAL GENERATE ROUTE FUNCTION
+
   const handleGenerateRoute = () => {
     const allActivities = Object.values(dataMap).flat();
     const selected = allActivities.filter((activity) =>
