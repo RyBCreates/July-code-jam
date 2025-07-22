@@ -47,6 +47,10 @@
   gap: 1vw;
 }
 
+.header__username {
+  color: white;
+}
+
 .header__register-button,
 .header__login-button {
   font-size: 18px;

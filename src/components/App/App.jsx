@@ -1,6 +1,7 @@
 import "./App.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { register, login, checkToken } from "../../utils/api/auth";
 
 import Header from "../Header/Header";
 import Home from "../pages/Home/Home";
@@ -85,8 +86,8 @@ function App() {
     }
   }, []);
 
-  const handleRegister = ({ email, password, name, avatar }) => {
-    register({ email, password, name, avatar })
+  const handleRegister = ({ email, password, username, avatar }) => {
+    register({ email, password, username, avatar })
       .then(() => {
         return login({ email, password });
       })
