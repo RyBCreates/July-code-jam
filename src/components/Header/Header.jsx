@@ -16,7 +16,7 @@ function Header({ handleLoginClick, handleRegisterClick }) {
         </Link>
         {isLoggedIn ? (
           <div className="header__user-block">
-            <p className="header__username">{currentUser?.name}</p>
+            <p className="header__username">{currentUser?.username}</p>
             <img className="header__avatar" src={avatar} alt="Avatar" />
           </div>
         ) : (

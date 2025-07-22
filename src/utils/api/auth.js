@@ -7,13 +7,13 @@ export const checkResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
-export function register({ email, password, name, avatar }) {
-  return fetch(`${baseUrl}/signup`, {
+export function register({ email, password, username, avatar }) {
+  return fetch(`${baseUrl}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password, name, avatar }),
+    body: JSON.stringify({ email, password, username, avatar }),
   }).then(async (response) => {
     const data = await response.json();
     if (response.ok) {
@@ -24,7 +24,7 @@ export function register({ email, password, name, avatar }) {
 }
 
 export function login({ email, password }) {
-  return fetch(`${baseUrl}/signin`, {
+  return fetch(`${baseUrl}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export function login({ email, password }) {
 }
 
 export function checkToken(token) {
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${baseUrl}/auth/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
