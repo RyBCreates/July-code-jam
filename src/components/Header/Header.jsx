@@ -1,6 +1,6 @@
 import "./Header.css";
 import logo from "../../assets/logo/logo.png";
-import avatar from "../../assets/images/default-avatar.svg";
+import defaultAvatar from "../../assets/images/default-avatar.svg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -17,7 +17,15 @@ function Header({ handleLoginClick, handleRegisterClick }) {
         {isLoggedIn ? (
           <Link className="header__user-block" to="/user">
             <p className="header__username">{currentUser?.username}</p>
-            <img className="header__avatar" src={avatar} alt="Avatar" />
+            <img
+              className="header__avatar"
+              src={currentUser?.avatar || defaultAvatar}
+              alt="Avatar"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = defaultAvatar;
+              }}
+            />
           </Link>
         ) : (
           <div className="header__user-block">

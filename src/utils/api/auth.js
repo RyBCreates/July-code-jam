@@ -1,5 +1,9 @@
 import { baseUrl } from "../constants";
 
+const getToken = () => {
+  return localStorage.getItem("jwt");
+};
+
 export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
@@ -47,5 +51,17 @@ export function checkToken(token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
+  }).then(checkResponse);
+}
+
+export function updateUser({ username, avatar }) {
+  const token = getToken();
+  return fetch(`${baseUrl}/auth/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ username, avatar }),
   }).then(checkResponse);
 }
