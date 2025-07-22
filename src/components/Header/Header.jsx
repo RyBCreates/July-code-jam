@@ -18,10 +18,7 @@ function Header({ handleLoginClick, handleRegisterClick }) {
           >
             Register
           </button>
-          <button
-            className="header__login-button"
-            onClick={handleLoginClick}
-          >
+          <button className="header__login-button" onClick={handleLoginClick}>
             Login
           </button>
           <img className="header__avatar" src={avatar} alt="Avatar" />
