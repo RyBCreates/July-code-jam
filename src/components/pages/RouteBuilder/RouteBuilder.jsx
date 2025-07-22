@@ -20,6 +20,7 @@ function RouteBuilder() {
   const [selectedActivityIds, setSelectedActivityIds] = useState([]);
 
   const activityType = ["Mountain Biking", "Hiking", "White-Water Rafting"];
+
   const handleActivityToggle = (activity) => {
     setSelectedActivities((prev) =>
       prev.includes(activity)
@@ -36,24 +37,6 @@ function RouteBuilder() {
     );
   };
 
-  // const handleDifficultyChange = (activity, level) => {
-  //   setDifficultySelections((prev) => {
-  //     const currentLevels = prev[activity] || [];
-  //     const isSelected = currentLevels.includes(level);
-
-  //     const updatedLevels = isSelected
-  //       ? currentLevels.filter((selectedLevel) => selectedLevel !== level) // remove if already selected
-  //       : [...currentLevels, level]; // add if not selected
-
-  //     return {
-  //       ...prev,
-  //       [activity]: updatedLevels,
-  //     };
-  //   });
-  // };
-
-  // ORIGINAL GENERATE ROUTE FUNCTION
-
   const handleGenerateRoute = () => {
     const allActivities = Object.values(dataMap).flat();
     const selected = allActivities.filter((activity) =>
@@ -62,27 +45,6 @@ function RouteBuilder() {
 
     navigate("/optimal-route", { state: { selected } });
   };
-
-  // const handleGenerateRoute = async () => {
-  //   if (selectedActivityIds.length < 2) {
-  //     alert("Please select at least 2 activities to generate a route.");
-  //     return;
-  //   }
-
-  //   const allActivities = Object.values(dataMap).flat();
-  //   const selected = allActivities.filter((activity) =>
-  //     selectedActivityIds.includes(activity.id)
-  //   );
-
-  //   try {
-  //     console.log("This is the selected:", selected);
-  //     const optimizedRoute = await generateOptimizedRoute(selected);
-  //     navigate("/optimal-route", { state: { optimizedRoute } });
-  //   } catch (error) {
-  //     console.error("Error generating route:", error);
-  //     alert("There was a problem generating your route. Please try again.");
-  //   }
-  // };
 
   return (
     <div className="route-builder-wrapper">
@@ -119,7 +81,7 @@ function RouteBuilder() {
                 <p className="route-builder__filter-label">
                   Select difficulty for {type}:
                 </p>
-                <div className="route-builder__filter-options">
+                <div className="route-builder__activity-card-row">
                   {["Beginner", "Intermediate", "Hard"].map((level) => {
                     const activityCard = dataSet.find(
                       (activity) => activity.difficulty === level
@@ -193,12 +155,10 @@ function RouteBuilder() {
               </div>
             </div>
           )}
+
           <button
             className="route-builder__generate-route-btn"
             onClick={handleGenerateRoute}
-            // onClick={() => {
-            //   generateOptimizedRoute(locations);
-            // }}
           >
             Generate My Route
           </button>
