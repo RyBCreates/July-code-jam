@@ -84,14 +84,16 @@ function RouteBuilder() {
             </span>
             <div className="route-builder__filter-options">
               {activityType.map((type) => (
-                <label key={type} className="route-builder__filter-option">
-                  <input
-                    type="checkbox"
-                    checked={selectedActivities.includes(type)}
-                    onChange={() => handleActivityToggle(type)}
-                  />
+                <button
+                  key={type}
+                  className={`route-builder__filter-option ${
+                    selectedActivities.includes(type) ? "selected" : ""
+                  }`}
+                  onClick={() => handleActivityToggle(type)}
+                  type="button"
+                >
                   {type}
-                </label>
+                </button>
               ))}
             </div>
           </div>
@@ -120,9 +122,9 @@ function RouteBuilder() {
                             ? "Remove from Route"
                             : "Add to Route"
                         }
-                        isSelected={selectedActivityIds.includes(
-                          activityCard.id
-                        )} // <-- STEP 3
+
+                        isSelected={selectedActivityIds.includes(activityCard.id)}
+
                         showButton={true}
                       />
                     ) : null;
@@ -153,7 +155,7 @@ function RouteBuilder() {
                       />
                       <div className="route-builder__selected-info">
                         <p className="route-builder__selected-type">
-                          <>{activity.type}</>
+                          {activity.type}
                         </p>
                         <p className="route-builder__selected-name">
                           {activity.name}

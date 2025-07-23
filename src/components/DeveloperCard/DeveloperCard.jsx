@@ -12,45 +12,41 @@ function DeveloperCard() {
       <li className="developer-card">
         <div className="developer-card__wrapper">
           <img
-            className="developer-card__image developer-card__image_ryan"
+            className="developer-card__image"
             src={Ryan}
             alt="Ryan Bommarito"
-          ></img>
-          <div className="developer-card__text">
-            <h2 className="developer-card__name">Ryan Bommarito</h2>
-            <p className="developer-card__type">Software Engineer</p>
-            <p className="developer-card__bio">
-              Filmmaker turned full-stack developer with a passion for
-              storytelling, whether it's through a lens or a line of code. I
-              bring creativity, collaboration, and an eye for detail to every
-              project I build.
-            </p>
-            <a
-              className="developer-card__linkedin"
-              href="https://www.linkedin.com/in/ryan-bommarito/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View LinkedIn Profile
-            </a>
-          </div>
+          />
+          <h2 className="developer-card__name">Ryan Bommarito</h2>
+          <p className="developer-card__type">Software Engineer</p>
+          <p className="developer-card__bio">
+            Filmmaker turned full-stack developer with a passion for
+            storytelling—through film or code. I bring creativity and attention
+            to detail to everything I build.
+          </p>
+          <a
+            className="developer-card__linkedin"
+            href="https://www.linkedin.com/in/ryan-bommarito/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View LinkedIn Profile
+          </a>
         </div>
       </li>
+
       <li className="developer-card">
         <div className="developer-card__wrapper">
           <img
-            className="developer-card__image developer-card__image_farida"
+            className="developer-card__image"
             src={Farida}
             alt="Farida Nelson"
-          ></img>
+          />
           <h2 className="developer-card__name">Farida Nelson</h2>
           <p className="developer-card__type">Software Engineer</p>
           <p className="developer-card__bio">
-            Founder of Farida Nelson Music LLC and leader of a Jazz Rock Fusion
-            Trio turned full-stack developer, I blend technical skill with
-            artistic vision. Whether I'm building an app or composing a setlist,
-            I bring innovation, precision, and a passion for creativity to every
-            project I take on.
+            Musician turned full-stack developer, I blend technical skill with
+            creative energy. From building apps to composing songs, I love
+            solving problems with originality.
           </p>
           <a
             className="developer-card__linkedin"
@@ -62,16 +58,20 @@ function DeveloperCard() {
           </a>
         </div>
       </li>
+
       <li className="developer-card">
         <div className="developer-card__wrapper">
           <img
-            className="developer-card__image developer-card__image_matthews"
+            className="developer-card__image"
             src={Matthews}
             alt="Matthews Jordao"
-          ></img>
+          />
           <h2 className="developer-card__name">Matthews Jordao</h2>
           <p className="developer-card__type">Software Engineer</p>
-          <p className="developer-card__bio">This is the bio</p>
+          <p className="developer-card__bio">
+            Digital designer and software engineer passionate about building
+            user-friendly, beautiful tools that make a real difference.
+          </p>
           <a
             className="developer-card__linkedin"
             href="https://www.linkedin.com/in/matthewsjordao/"
@@ -82,21 +82,19 @@ function DeveloperCard() {
           </a>
         </div>
       </li>
+
       <li className="developer-card">
         <div className="developer-card__wrapper">
           <img
-            className="developer-card__image developer-card__image_sohini"
+            className="developer-card__image"
             src={Sohini}
-            alt="Sohini Das"
-          ></img>
+            alt="Sohini Tomar"
+          />
           <h2 className="developer-card__name">Sohini Tomar</h2>
           <p className="developer-card__type">Data Scientist</p>
           <p className="developer-card__bio">
-            Sohini Tomar Data Scientist, Seasoned business professional with
-            strong analytical skills turned data scientist, blending strategic
-            insight with a passion for cross-functional collaboration. I bring
-            global experience and a results-driven mindset to uncover
-            data-driven solutions that create impact.
+            Business strategist turned data scientist with a global perspective
+            and passion for solving complex challenges through data.
           </p>
           <a
             className="developer-card__linkedin"
@@ -108,21 +106,19 @@ function DeveloperCard() {
           </a>
         </div>
       </li>
+
       <li className="developer-card">
         <div className="developer-card__wrapper">
           <img
-            className="developer-card__image developer-card__image_rawaa"
+            className="developer-card__image"
             src={Rawaa}
-            alt="Rawaa Youssief"
-          ></img>
+            alt="Rawaa Yousseif"
+          />
           <h2 className="developer-card__name">Rawaa Yousseif</h2>
           <p className="developer-card__type">Data Scientist</p>
           <p className="developer-card__bio">
-            Data Scientist with a background in agricultural science,
-            specializing in geospatial analysis, machine learning, and
-            interactive visualizations. I use tools like Python, Jupyter,
-            Folium, and Plotly to turn complex data into clear, actionable
-            insights.
+            Geospatial expert and data scientist turning complex datasets into
+            powerful, intuitive visualizations with Python and ML tools.
           </p>
           <a
             className="developer-card__linkedin"

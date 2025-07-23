@@ -1,55 +1,54 @@
 .about {
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.05);
-  padding: 80px 20px;
+  padding: 60px 16px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   box-sizing: border-box;
 }
 
 .about__card {
   background-color: #ffffff;
-  padding: 60px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 75vw;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .about__title {
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 4rem);
   margin-bottom: 20px;
   text-align: center;
 }
 
 .about__description {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: #333333;
-  margin: 0 50px 40px;
-  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0 auto 40px;
+  max-width: 900px;
+  text-align: center;
 }
 
 .about__sub-title {
-  font-family: "Roboto-medium", Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 2.5rem);
-  font-weight: 600;
+  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: clamp(3rem, 2.5vw, 5rem);
   color: #033258;
   margin-bottom: 30px;
-  text-align: left;
+  text-align: center;
 }
 
 .about__developers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
   list-style: none;
   padding: 0;
-  gap: 30px;
-  justify-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
 }

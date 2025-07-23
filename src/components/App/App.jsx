@@ -10,7 +10,7 @@ import UserProfile from "../pages/UserProfile/UserProfile";
 import RouteBuilder from "../pages/RouteBuilder/RouteBuilder";
 import OptimalRoute from "../pages/OptimalRoute/OptimalRoute";
 import About from "../pages/About/About";
-import Questions from "../pages/Questions/Questions";
+import Questions from "../pages/FAQ/faq";
 import Contact from "../pages/Contact/Contact";
 import Footer from "../Footer/Footer";
 

@@ -48,62 +48,97 @@
   font-size: clamp(2rem, 2.5vw, 2.5rem);
   padding: 2vw 5vw;
   max-width: 1440px;
-  
+  gap: 20px;
 }
 
 
 .route-builder__title {
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
-  font-size: 64px;
   font-weight: bold;
   text-align: left;
   margin-bottom: 40px;
-  
 }
 
 .route-builder__filter-menu {
-  width: 1106px;
-  height: 65px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  background-color: #0077cc;
-  border: none;
-  border-radius: 8px;
-  margin-left: 21px;
-  margin-bottom: 40px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 1106px;
+  background-color: #0077cc;
+  border-radius: 8px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
 .route-builder__filter-menu-label {
+  flex: 1 1 100%;
   font-size: 24px;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: bold;
-  display: block;
   color: white;
-  flex-wrap: wrap;
 }
 
 .route-builder__filter-options {
   display: flex;
-  gap: 24px;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
 }
-
-
 
 .route-builder__filter-option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 20px;
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 200px;
+  padding: 5px 16px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: #0077cc;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 1.2vw, 1.2rem);
   cursor: pointer;
-  border-radius: 8px;
-  padding: 8px 12px;
-  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  text-align: center;
 }
+
+.route-builder__filter-option:hover {
+  background-color: rgb(233, 233, 233);
+  border: 2px solid rgb(231, 231, 231);;
+}
+
+.route-builder__filter-option.selected {
+  background-color: rgb(10, 139, 6);
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.route-builder__filter-option.selected:hover {
+  background-color: rgb(139, 26, 6);
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+@media (max-width: 600px) {
+  .route-builder__filter-options {
+    justify-content: center;
+  }
+
+  .route-builder__filter-option {
+    flex: 1 1 80%;
+    max-width: 90%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+
 
 .route-builder__difficulty-group {
   align-self: center;
@@ -297,7 +332,7 @@
   border-radius: 8px;
   cursor: pointer;
   padding: 0;
-  width: 2.5rem;
+  width: 3rem;
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -321,7 +356,7 @@
 }
 
 .route-builder__generate-route-btn {
-  width: 500px;
+  min-width: 250px;
   height: 75px;
   font-size: 24px;
   font-weight: bold;
@@ -331,7 +366,8 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: auto;
+  margin: 20px auto;
+  
 }
 
 .route-builder__generate-route-btn:hover {
