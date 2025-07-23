@@ -17,7 +17,6 @@ function LoginModal({ activeModal, closeModal, handleSwitchModal }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Email:", email, "Password:", password);
     handleLogin({ email, password })
       .then(() => {
         closeModal();

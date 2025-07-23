@@ -66,8 +66,6 @@ function OptimalRoute() {
     localStorage.setItem("savedRoutes", JSON.stringify(updated));
   };
 
-  console.log("Received optimizedRoute:", selectedActivities);
-
   const normalizedActivities = selectedActivities.map((act) => ({
     ...act,
     name: act.trail_name || act.name,

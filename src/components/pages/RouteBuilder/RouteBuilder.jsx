@@ -55,7 +55,6 @@ function RouteBuilder() {
         longitude: activity.location?.lng ?? activity.lng,
       }));
       const response = await generateOptimizedRoute(normalizedSelected);
-      console.log("API response:", response);
 
       navigate("/optimal-route", {
         state: {
@@ -122,9 +121,9 @@ function RouteBuilder() {
                             ? "Remove from Route"
                             : "Add to Route"
                         }
-
-                        isSelected={selectedActivityIds.includes(activityCard.id)}
-
+                        isSelected={selectedActivityIds.includes(
+                          activityCard.id
+                        )}
                         showButton={true}
                       />
                     ) : null;
