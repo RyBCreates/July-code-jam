@@ -19,6 +19,8 @@ function RouteBuilder() {
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [selectedActivityIds, setSelectedActivityIds] = useState([]);
 
+  const [loading, setLoading] = useState(false);
+
   const activityType = ["Mountain Biking", "Hiking", "White-Water Rafting"];
 
   const handleActivityToggle = (activity) => {
@@ -48,6 +50,8 @@ function RouteBuilder() {
       selectedActivityIds.includes(activity.id)
     );
 
+    setLoading(true);
+
     try {
       const normalizedSelected = selected.map((activity) => ({
         ...activity,
@@ -65,6 +69,8 @@ function RouteBuilder() {
     } catch (error) {
       console.error("Error generating route:", error);
       alert("There was a problem generating your route. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -190,7 +196,7 @@ function RouteBuilder() {
             onClick={handleGenerateRoute}
             disabled={selectedActivityIds.length < 3}
           >
-            Generate My Route
+            {loading ? "Loading..." : "Generate My Route"}
           </button>
         </div>
       </div>
