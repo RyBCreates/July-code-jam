@@ -1,5 +1,6 @@
 import "./RoutePreview.css";
 import { useEffect, useState } from "react";
+import { API_KEY } from "../../constants/config";
 
 function RoutePreview() {
   const [previewRoute, setPreviewRoute] = useState(null);
@@ -32,8 +33,6 @@ function RoutePreview() {
       setPreviewRoute(defaultRoute);
     }
   }, []);
-
-  const API_KEY = "AIzaSyDkPE0UYfDibIgUqLca2vpcQI1IZKOoiHE";
 
   return (
     <section className="route-preview">
