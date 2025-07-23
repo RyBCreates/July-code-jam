@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { register, login, checkToken } from "../../utils/api/auth";
+import { register, login, checkToken, updateUser } from "../../utils/api/auth";
 
 import Header from "../Header/Header";
 import Home from "../pages/Home/Home";
@@ -16,6 +16,7 @@ import Footer from "../Footer/Footer";
 
 import LoginModal from "../modals/LoginModal/LoginModal";
 import RegisterModal from "../modals/RegisterModal/RegisterModal";
+import EditProfileModal from "../modals/EditProfileModal/EditProfileModal";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -45,6 +46,11 @@ function App() {
     }
   };
 
+  // Open Edit Profile Modal
+  const handleEditProfileClick = () => {
+    setActiveModal("edit-profile-modal");
+  };
+
   // Close Modal
   const closeModal = () => {
     setActiveModal("");
@@ -71,6 +77,7 @@ function App() {
     };
   }, []);
 
+  // Check for jwt token
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
@@ -86,6 +93,7 @@ function App() {
     }
   }, []);
 
+  // Register a user
   const handleRegister = ({ email, password, username, avatar }) => {
     register({ email, password, username, avatar })
       .then(() => {
@@ -107,6 +115,7 @@ function App() {
       });
   };
 
+  // Login a User
   const handleLogin = ({ email, password }) => {
     return login({ email, password })
       .then((data) => {
@@ -124,10 +133,24 @@ function App() {
         console.error("Login error:", error);
       });
   };
+
+  // Logout a user
   const handleLogout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
+  };
+
+  // update user info
+  const handleUpdateUser = ({ username, avatar }) => {
+    updateUser({ username, avatar })
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser);
+        closeModal();
+      })
+      .catch((error) => {
+        console.error("Update error:", error);
+      });
   };
   return (
     <CurrentUserContext.Provider
@@ -137,6 +160,7 @@ function App() {
         handleLogin,
         handleRegister,
         handleLogout,
+        updateUser: handleUpdateUser,
       }}
     >
       <div className="app">
@@ -155,6 +179,7 @@ function App() {
                   element={UserProfile}
                   isLoggedIn={isLoggedIn}
                   handleLogout={handleLogout}
+                  handleEditProfileClick={handleEditProfileClick}
                 />
               }
             />
@@ -177,6 +202,7 @@ function App() {
           handleSwitchModal={handleSwitchModal}
           onRegister={handleRegister}
         />
+        <EditProfileModal activeModal={activeModal} closeModal={closeModal} />
       </div>
     </CurrentUserContext.Provider>
   );

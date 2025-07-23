@@ -6,6 +6,7 @@ const CurrentUserContext = createContext({
   handleLogin: (email, password) => {},
   handleRegister: () => {},
   handleLogout: () => {},
+  updateUser: (username, avatar) => {},
 });
 
 export default CurrentUserContext;
