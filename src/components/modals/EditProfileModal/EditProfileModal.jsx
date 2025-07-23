@@ -21,11 +21,13 @@ function EditProfileModal({ activeModal, closeModal }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    return updateUser({ username, avatar: imageUrl })
+    updateUser({ username, avatar: imageUrl })
       .then(() => {
         closeModal();
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error("Failed to update user:", err);
+      });
   };
 
   return (
