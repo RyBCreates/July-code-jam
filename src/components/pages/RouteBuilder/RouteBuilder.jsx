@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { activities as hikingActivities } from "../../../utils/mockData/hikingData";
 import { mountainBikingData } from "../../../utils/mockData/mountainBiking";
 import { whiteWaterRaftingData } from "../../../utils/mockData/whiteWaterRafting";
-import { generateOptimizedRoute } from "../../../utils/api/optimalRoute";
 import trashIcon from "../../../assets/icons/trash-can-icon.svg";
 import ActivityCard from "../ActivityCard/ActivityCard";
+import { generateOptimizedRoute } from "../../../utils/api/optimalRoute";
 
 const dataMap = {
   Hiking: hikingActivities,
@@ -122,7 +122,9 @@ function RouteBuilder() {
                             ? "Remove from Route"
                             : "Add to Route"
                         }
+
                         isSelected={selectedActivityIds.includes(activityCard.id)}
+
                         showButton={true}
                       />
                     ) : null;
