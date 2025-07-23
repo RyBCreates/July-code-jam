@@ -7,7 +7,6 @@ function ActivityCard({
   showButton = false,
   isSelected = false,
 }) {
-
   return (
     <div className="activity-card">
       <img
@@ -35,18 +34,19 @@ function ActivityCard({
         </p>
         <p>
           <strong>Difficulty</strong> {activity.difficulty}
-          </p>
+        </p>
       </div>
 
-      <button
-  className={`activity-card__button ${
-    isSelected ? "activity-card__button--selected" : ""
-  }`}
-  onClick={() => onButtonClick(activity.id)}
->
-  {buttonText}
-</button>
-
+      {showButton && (
+        <button
+          className={`activity-card__button ${
+            isSelected ? "activity-card__button--selected" : ""
+          }`}
+          onClick={() => onButtonClick(activity.id)}
+        >
+          {buttonText}
+        </button>
+      )}
     </div>
   );
 }
