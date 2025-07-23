@@ -1,82 +1,63 @@
 .developer-card {
   background: white;
-  max-width: 300px;
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.developer-card:hover {
+  transform: translateY(-5px);
 }
 
 .developer-card__wrapper {
-  padding: 10px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
 }
 
 .developer-card__image {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.developer-card__image_ryan {
-  object-position: 50% 15%;
-}
-
-.developer-card__image_farida {
-  object-position: 50% 10%;
-}
-
-.developer-card__image_sohini {
-  object-position: 50% 10%;
-}
-
-.developer-card__image_rawaa {
-  object-fit: cover;
-  object-position: 50% 10%;
-  /* transform: scale(1.8); */
-}
-
-.developer-card:nth-child(4) {
-  grid-column: 1 / 3;
-  grid-row: 2;
-}
-
-.developer-card:nth-child(5) {
-  grid-column: 2 / 4;
-  grid-row: 2;
-}
-
-.developer-card__text {
-  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  object-position: center top;
 }
 
 .developer-card__name {
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  font-weight: 700;
   margin: 0;
+  text-align: center;
 }
 
 .developer-card__type {
-  margin: 0;
-  font-size: 20px;
+  font-size: clamp(1.3rem, 1vw, 1.5rem);
+  font-weight: bold;
+  color: #555;
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 .developer-card__bio {
-  margin: 0;
-  padding-top: 20px;
-  font-size: 20px;
+  font-size: clamp(1.1rem, .8vw, 1.3rem);
+  color: #333;
+  margin: 12px 0;
+  text-align: center;
 }
 
 .developer-card__linkedin {
-  display: inline-block;
-  margin-top: 10px;
-  color: #0a66c2; /* LinkedIn blue */
-  text-decoration: none;
+  color: #0a66c2;
   font-weight: 500;
-  font-size: 20px;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 .developer-card__linkedin:hover {
