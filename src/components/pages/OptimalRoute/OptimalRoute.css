@@ -137,6 +137,14 @@
   border-radius: 8px;
 }
 
+.saved-routes__map-clickable {
+  cursor: pointer;
+}
+
+.saved-routes__map-clickable iframe {
+  pointer-events: none;
+}
+
 .saved-routes__delete-btn {
   position: absolute;
   border: none;
