@@ -3,8 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ActivityCard from "../ActivityCard/ActivityCard";
 
-import MapModal from "../../modals/MapModal/MapModal";
 import SavedRoutes from "../../../components/SavedRoutes/SavedRoutes";
+import { API_KEY } from "../../../constants/config";
 
 function OptimalRoute() {
   //scroll to the top of the page
@@ -16,8 +16,6 @@ function OptimalRoute() {
   const navigate = useNavigate();
   const selectedActivities = state?.optimizedRoute || []; // fallback to empty array if none
   const totalDistance = state?.totalDistanceKm || 0;
-
-  const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   if (selectedActivities.length < 2) {
     return (

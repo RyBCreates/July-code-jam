@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import CurrentUserContext from "../../../contexts/CurrentUserContext";
 import SavedRoutes from "../../../components/SavedRoutes/SavedRoutes";
+import { API_KEY } from "../../../constants/config";
 import "./UserProfile.css";
 
 function UserProfile({ handleLogout, handleEditProfileClick }) {
   const { currentUser } = useContext(CurrentUserContext);
 
   const [savedRoutes, setSavedRoutes] = useState([]);
-  const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   useEffect(() => {
     const storedRoutes = JSON.parse(localStorage.getItem("savedRoutes")) || [];
