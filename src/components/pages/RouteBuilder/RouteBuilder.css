@@ -51,6 +51,7 @@
   
 }
 
+
 .route-builder__title {
   font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
   font-size: 64px;
@@ -91,6 +92,8 @@
   flex-wrap: wrap;
 }
 
+
+
 .route-builder__filter-option {
   display: flex;
   align-items: center;
@@ -127,6 +130,16 @@
   flex-wrap: wrap;    
   gap: 24px;           
 }
+
+.route-builder__activity-card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 24px;
+}
+
 
 
 

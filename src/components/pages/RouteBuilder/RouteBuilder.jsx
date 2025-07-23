@@ -20,6 +20,7 @@ function RouteBuilder() {
   const [selectedActivityIds, setSelectedActivityIds] = useState([]);
 
   const activityType = ["Mountain Biking", "Hiking", "White-Water Rafting"];
+
   const handleActivityToggle = (activity) => {
     setSelectedActivities((prev) =>
       prev.includes(activity)
@@ -130,7 +131,7 @@ function RouteBuilder() {
                 <p className="route-builder__filter-label">
                   Select difficulty for {type}:
                 </p>
-                <div className="route-builder__filter-options">
+                <div className="route-builder__activity-card-row">
                   {["Beginner", "Intermediate", "Hard"].map((level) => {
                     const activityCard = dataSet.find(
                       (activity) => activity.difficulty === level
@@ -204,6 +205,7 @@ function RouteBuilder() {
               </div>
             </div>
           )}
+
           <button
             className="route-builder__generate-route-btn"
             onClick={handleGenerateRoute}
