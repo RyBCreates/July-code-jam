@@ -1,0 +1,62 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  margin: 75px;
+}
+
+.profile__title {
+  font-size: 50px;
+  text-align: left;
+}
+
+.profile__user-info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: 35px;
+  padding: 20px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin: 60px 20px;
+  background-color: white;
+}
+
+.profile__btn-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.profile__logout-button {
+  background-color: #0566d5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
+  font-size: 30px;
+}
+
+.profile__logout-button:hover {
+  background-color: #0097a7;
+}
+
+.profile__edit-button {
+  background-color: #0566d5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 40px 40px;
+  font-size: 30px;
+}
+
+.profile__edit-button:hover {
+  background-color: #0097a7;
+}

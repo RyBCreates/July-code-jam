@@ -33,7 +33,7 @@ function RoutePreview() {
     }
   }, []);
 
-  const API_KEY = "AIzaSyDkPE0UYfDibIgUqLca2vpcQI1IZKOoiHE";
+  const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <section className="route-preview">
