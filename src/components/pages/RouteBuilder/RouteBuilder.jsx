@@ -37,33 +37,6 @@ function RouteBuilder() {
     );
   };
 
-  // const handleDifficultyChange = (activity, level) => {
-  //   setDifficultySelections((prev) => {
-  //     const currentLevels = prev[activity] || [];
-  //     const isSelected = currentLevels.includes(level);
-
-  //     const updatedLevels = isSelected
-  //       ? currentLevels.filter((selectedLevel) => selectedLevel !== level) // remove if already selected
-  //       : [...currentLevels, level]; // add if not selected
-
-  //     return {
-  //       ...prev,
-  //       [activity]: updatedLevels,
-  //     };
-  //   });
-  // };
-
-  // ORIGINAL GENERATE ROUTE FUNCTION
-
-  // const handleGenerateRoute = () => {
-  //   const allActivities = Object.values(dataMap).flat();
-  //   const selected = allActivities.filter((activity) =>
-  //     selectedActivityIds.includes(activity.id)
-  //   );
-
-  //   navigate("/optimal-route", { state: { selected } });
-  // };
-
   const handleGenerateRoute = async () => {
     if (selectedActivityIds.length < 2) {
       alert("Please select at least 2 activities to generate a route.");
@@ -111,14 +84,16 @@ function RouteBuilder() {
             </span>
             <div className="route-builder__filter-options">
               {activityType.map((type) => (
-                <label key={type} className="route-builder__filter-option">
-                  <input
-                    type="checkbox"
-                    checked={selectedActivities.includes(type)}
-                    onChange={() => handleActivityToggle(type)}
-                  />
+                <button
+                  key={type}
+                  className={`route-builder__filter-option ${
+                    selectedActivities.includes(type) ? "selected" : ""
+                  }`}
+                  onClick={() => handleActivityToggle(type)}
+                  type="button"
+                >
                   {type}
-                </label>
+                </button>
               ))}
             </div>
           </div>
@@ -138,20 +113,19 @@ function RouteBuilder() {
                     );
 
                     return activityCard ? (
-  <ActivityCard
-    key={`${type}-${level}`}
-    activity={activityCard}
-    onButtonClick={handleAddToRoute}
-    buttonText={
-      selectedActivityIds.includes(activityCard.id)
-        ? "Remove from Route"
-        : "Add to Route"
-    }
-    isSelected={selectedActivityIds.includes(activityCard.id)} // <-- STEP 3
-    showButton={true}
-  />
-) : null;
-
+                      <ActivityCard
+                        key={`${type}-${level}`}
+                        activity={activityCard}
+                        onButtonClick={handleAddToRoute}
+                        buttonText={
+                          selectedActivityIds.includes(activityCard.id)
+                            ? "Remove from Route"
+                            : "Add to Route"
+                        }
+                        isSelected={selectedActivityIds.includes(activityCard.id)}
+                        showButton={true}
+                      />
+                    ) : null;
                   })}
                 </div>
               </div>
@@ -160,9 +134,7 @@ function RouteBuilder() {
 
           {selectedActivityIds.length > 0 && (
             <div className="route-builder__selected-preview">
-              <h3 >
-                Your Route Preview
-              </h3>
+              <h3>Your Route Preview</h3>
               <div className="route-builder__selected-cards">
                 {Object.values(dataMap)
                   .flat()
@@ -181,7 +153,7 @@ function RouteBuilder() {
                       />
                       <div className="route-builder__selected-info">
                         <p className="route-builder__selected-type">
-                          <>{activity.type}</>
+                          {activity.type}
                         </p>
                         <p className="route-builder__selected-name">
                           {activity.name}
@@ -213,13 +185,12 @@ function RouteBuilder() {
           )}
 
           <button
-  className="route-builder__generate-route-btn"
-  onClick={handleGenerateRoute}
-  disabled={selectedActivityIds.length < 3}
->
-  Generate My Route
-</button>
-
+            className="route-builder__generate-route-btn"
+            onClick={handleGenerateRoute}
+            disabled={selectedActivityIds.length < 3}
+          >
+            Generate My Route
+          </button>
         </div>
       </div>
     </div>
