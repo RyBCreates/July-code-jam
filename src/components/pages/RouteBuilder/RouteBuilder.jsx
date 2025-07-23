@@ -88,14 +88,20 @@ function RouteBuilder() {
                     );
 
                     return activityCard ? (
-                      <ActivityCard
-                        key={`${type}-${level}`}
-                        activity={activityCard}
-                        onButtonClick={handleAddToRoute}
-                        buttonText="Add to Route"
-                        showButton={true}
-                      />
-                    ) : null;
+  <ActivityCard
+    key={`${type}-${level}`}
+    activity={activityCard}
+    onButtonClick={handleAddToRoute}
+    buttonText={
+      selectedActivityIds.includes(activityCard.id)
+        ? "Remove from Route"
+        : "Add to Route"
+    }
+    isSelected={selectedActivityIds.includes(activityCard.id)} // <-- STEP 3
+    showButton={true}
+  />
+) : null;
+
                   })}
                 </div>
               </div>
@@ -104,7 +110,7 @@ function RouteBuilder() {
 
           {selectedActivityIds.length > 0 && (
             <div className="route-builder__selected-preview">
-              <h3 className="route-builder__preview-title">
+              <h3 >
                 Your Route Preview
               </h3>
               <div className="route-builder__selected-cards">
@@ -125,7 +131,7 @@ function RouteBuilder() {
                       />
                       <div className="route-builder__selected-info">
                         <p className="route-builder__selected-type">
-                          <strong>{activity.type}</strong>
+                          <>{activity.type}</>
                         </p>
                         <p className="route-builder__selected-name">
                           {activity.name}
@@ -157,11 +163,13 @@ function RouteBuilder() {
           )}
 
           <button
-            className="route-builder__generate-route-btn"
-            onClick={handleGenerateRoute}
-          >
-            Generate My Route
-          </button>
+  className="route-builder__generate-route-btn"
+  onClick={handleGenerateRoute}
+  disabled={selectedActivityIds.length < 3}
+>
+  Generate My Route
+</button>
+
         </div>
       </div>
     </div>

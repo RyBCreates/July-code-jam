@@ -131,14 +131,7 @@
   gap: 24px;           
 }
 
-.route-builder__activity-card-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  align-items: stretch;
-  width: 100%;
-  margin-top: 24px;
-}
+
 
 
 
@@ -184,55 +177,144 @@
 .route-builder__selected-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
   justify-content: center;
+  gap: 24px;
+  width: 100%;
 }
 
+
 .route-builder__selected-card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-self: center;
-  width: 260px;
-  height: 460px;
   background-color: white;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1 1 300px;
+  max-width: 300px;
+  min-width: 260px;
+  aspect-ratio: 1 / 1.5;
+  position: relative;
+}
+
+.route-builder__activity-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
 }
 
 
 .route-builder__selected-image {
   width: 100%;
-  height: 140px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
-.route-builder__selected-info p {
-  margin: 4px 0;
-  font-size: 16px;
-  text-align: left;
+.route-builder__selected-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 0;
+  color: black;
+  font-size: clamp(2rem, 1vw, 1rem);
+  margin: 0;
+}
+
+.route-builder__selected-type {
+  font-family: "Roboto-Bold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: clamp(2rem, 1.5vw, 1.8rem);
+  line-height: 1.2;
+  margin: 0;
+  color: #033258;
+  padding-top: 20px;
+  
+}
+
+
+.route-builder__selected-name {
+  margin: 0;
+  margin-top: -10px; /* moves it up - adjust the value as needed */
+  margin-bottom: 10px; /* adds space below - adjust to match */
+  padding-bottom: 10px; /* adds space below - adjust to match */
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 1vw, 1rem);
+}
+
+.route-builder__selected-trail {
+  margin: 0;
+  font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: clamp(1.2rem, 1vw, 1rem);
+  color: #000000;
+}
+
+.route-builder__selected-info{
+  margin: 0;
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1vw, 1rem);
+}
+
+
+.route-builder__selected-difficulty {
+  margin: 0;
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1vw, 1rem);
+}
+
+.route-builder__selected-gear-needed{
+  margin: 0;
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1vw, 1rem);
+}
+
+.route-builder__selected-camping{
+  margin: 0;
+  font-family: "Roboto-SemiBold", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1vw, 1rem);
 }
 
 .route-builder__remove-card-btn {
-  background: rgba(255, 255, 255, 1);
+  position: absolute;         /* <-- makes it float inside the parent */
+  top: 12px;                   /* <-- distance from top */
+  right: 12px;                 /* <-- distance from right */
+  background: rgba(255, 255, 255);
   border: solid 1px #ccc;
-  border-radius: 0 10px;
+  border-radius: 8px;
   cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 12px;
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
+
 .route-builder__remove-card-btn img {
-  width: 20px;
-  height: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: cover;
+  margin: auto;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
 }
+
 
 .route-builder__remove-card-btn:hover {
   background-color: #f0f0f0;
@@ -249,9 +331,17 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 40px auto 60px auto;
+  margin: auto;
 }
 
 .route-builder__generate-route-btn:hover {
   background-color: #0097a7;
 }
+
+.route-builder__generate-route-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  opacity: 0.7;
+  cursor:   not-allowed;
+}
+
