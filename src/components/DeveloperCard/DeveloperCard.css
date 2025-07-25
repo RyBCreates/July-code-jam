@@ -47,19 +47,16 @@
 }
 
 .developer-card__bio {
-  font-size: clamp(1.1rem, .8vw, 1.3rem);
+  font-size: clamp(1.1rem, 0.8vw, 1.3rem);
   color: #333;
   margin: 12px 0;
   text-align: center;
 }
 
-.developer-card__linkedin {
-  color: #0a66c2;
-  font-weight: 500;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-.developer-card__linkedin:hover {
-  text-decoration: underline;
+.developer-card__socials {
+  list-style: none;
+  padding: 0;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
 }
