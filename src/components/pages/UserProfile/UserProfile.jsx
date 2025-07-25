@@ -24,18 +24,14 @@ function UserProfile({ handleLogout, handleEditProfileClick }) {
     <section className="profile">
       <h1 className="profile__title">{`Welcome, ${currentUser?.username}`}</h1>
       <div className="profile__user-info">
-        {/* <img
-          src={currentUser.avatar}
-          alt={`${currentUser.username}'s avatar`}
-        /> */}
         <div className="profile__user-details">
           <p>
-            <strong>User name: </strong>
-            {currentUser.username}
+            <strong>Username: </strong>
+            {currentUser?.username}
           </p>
           <p>
-            <strong>User email: </strong>
-            {currentUser.email}
+            <strong>Email: </strong>
+            {currentUser?.email}
           </p>
         </div>
       </div>
