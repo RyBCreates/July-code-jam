@@ -1,4 +1,3 @@
-// src/components/SavedRoutes/SavedRoutes.jsx
 import "./SavedRoutes.css";
 import trashIcon from "../../assets/icons/trash-can-icon.svg";
 import MapModal from "../modals/MapModal/MapModal";
